@@ -55,6 +55,16 @@ video{display:block;width:100%;max-width:850px;max-height:65vh;object-fit:contai
 .planet-buttons button{padding:12px 5px;font-size:.88rem;background:linear-gradient(145deg,#433568,#20162f);border-color:#d1a7ff55}
 .planet-message{min-height:55px;color:#ffd0eb;font-size:1.1rem;text-shadow:0 0 15px #ff5eaf}
 
+/* NEW: CHERRY'S FOUR-MEMORY PHOTO GALLERY */
+.memory-gallery{width:min(100%,850px);margin:35px auto 15px}
+.memory-gallery h2{color:#ffe3f5;text-shadow:0 0 18px #ff55b7}
+.memory-gallery>p{color:#e9d7ff;margin-bottom:20px}
+.memory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.memory-card{padding:8px;border:1px solid #ffb7e755;border-radius:17px;background:linear-gradient(145deg,#51275c99,#17102cdd);box-shadow:0 0 22px #d64dff22;overflow:hidden}
+.memory-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:11px;box-shadow:0 0 16px #e85cff22}
+.memory-card p{color:#ffe0f2;padding:10px 4px 5px;font-size:.95rem}
+@media(max-width:420px){.memory-grid{gap:9px}.memory-card{padding:5px}.memory-card p{font-size:.82rem}}
+
 /* CINEMATIC SPACE */
 #cinema{padding:0;background:#02030a;isolation:isolate}
 .space-bg{position:absolute;inset:0;z-index:-4;background:radial-gradient(ellipse at 48% 50%,#243e76,#17143f 35%,#08091f 68%,#010208)}
@@ -84,29 +94,48 @@ video{display:block;width:100%;max-width:850px;max-height:65vh;object-fit:contai
 .video-frame{width:min(96vw,900px);animation:videoReveal 1.7s ease both}
 @keyframes videoReveal{from{opacity:0;transform:scale(.8);filter:blur(8px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
 
-/* SHOOTING STAR */
+/* NEW: SLOW, BRIGHT SHOOTING STAR, MOON AND TWINKLING STARS */
 #starPage{background:radial-gradient(ellipse at 50% 100%,#172f60,transparent 65%),linear-gradient(#01030b,#090d24)}
-.shooting-star{position:absolute;left:-35%;top:26%;width:clamp(180px,42vw,400px);height:3px;z-index:2;opacity:0;transform:rotate(-24deg);border-radius:100%;background:linear-gradient(90deg,transparent,#567dff22 35%,#b9e5ff 75%,white);box-shadow:0 0 8px #d9f4ff,0 0 22px #8dbdff}
-.shooting-star::after{content:"";position:absolute;right:-4px;top:-4px;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 9px 4px white,0 0 24px 10px #91c8ff,0 0 42px 14px #6b70ff77}
-#starPage.star-active .shooting-star{animation:shootAcross 2.8s cubic-bezier(.25,.1,.3,1) forwards}
-@keyframes shootAcross{0%{left:-40%;top:24%;opacity:0}12%{opacity:1}72%{opacity:1}100%{left:125%;top:58%;opacity:0}}
-.wish-message{max-width:650px;padding:20px;color:#e5eaff;line-height:1.9;text-shadow:0 0 12px #729bff}
-.wish-result{display:none;max-width:600px;padding:20px;color:#ffe7f7;text-shadow:0 0 15px #ff67ba}
+#starPage .star-layer{z-index:0;opacity:.9;background-image:radial-gradient(2px 2px at 12% 20%,#fff 95%,transparent),radial-gradient(2px 2px at 32% 42%,#d4e9ff 95%,transparent),radial-gradient(3px 3px at 78% 19%,#fff 95%,transparent),radial-gradient(2px 2px at 85% 65%,#ffe5f8 95%,transparent),radial-gradient(2px 2px at 54% 13%,#fff 95%,transparent),radial-gradient(2px 2px at 20% 80%,#a6d9ff 95%,transparent),radial-gradient(1px 1px at 64% 38%,#fff 95%,transparent);background-size:230px 210px;animation:starsMove 45s linear infinite}
+.moon{position:absolute;z-index:1;right:9%;top:9%;width:clamp(48px,13vw,88px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 27%,#fffef1,#f6edff 45%,#c6d6ff 78%,#899bd4);box-shadow:0 0 15px #fff,0 0 35px #c7d9ff,0 0 75px #91aaff88;animation:moonGlow 3s ease-in-out infinite alternate}
+.moon::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 65% 35%,#aab7dc44 0 7%,transparent 9%),radial-gradient(circle at 35% 65%,#9ba8d544 0 11%,transparent 13%),radial-gradient(circle at 70% 70%,#aab7dc33 0 5%,transparent 7%)}
+@keyframes moonGlow{to{box-shadow:0 0 24px #fff,0 0 50px #c7d9ff,0 0 95px #91aaffaa}}
+.shooting-star{position:absolute;left:-45%;top:30%;width:clamp(190px,48vw,430px);height:5px;z-index:3;opacity:0;transform:rotate(-24deg);border-radius:100%;pointer-events:none;background:linear-gradient(90deg,transparent 0%,#536dff22 20%,#78baff 55%,#d9f4ff 83%,#fff 100%);box-shadow:0 0 8px #d9f4ff,0 0 18px #8dbdff,0 0 35px #718aff,0 0 55px #a66cff88}
+.shooting-star::before{content:"";position:absolute;right:0;top:50%;width:clamp(14px,3.5vw,23px);height:clamp(14px,3.5vw,23px);transform:translate(35%,-50%);border-radius:50%;background:radial-gradient(circle,#fff 0%,#fff 20%,#d9f4ff 36%,#80caff 57%,#9477ff 75%,transparent 100%);box-shadow:0 0 8px 4px white,0 0 20px 10px #91c8ff,0 0 38px 17px #6b70ffbb,0 0 65px 22px #bd71ff77}
+.shooting-star::after{content:"";position:absolute;right:0;top:50%;width:clamp(32px,8vw,65px);height:clamp(32px,8vw,65px);transform:translate(50%,-50%);border-radius:50%;background:radial-gradient(circle,#fff9 0%,#b6eaff55 30%,transparent 70%);filter:blur(3px)}
+#starPage.star-active .shooting-star{pointer-events:auto;cursor:pointer;animation:shootAcross 11s cubic-bezier(.25,.1,.3,1) forwards}
+@keyframes shootAcross{
+  0%{left:-45%;top:30%;opacity:0}
+  8%{opacity:1}
+  25%{top:34%;opacity:1}
+  50%{top:40%;opacity:1}
+  75%{top:47%;opacity:1}
+  92%{opacity:1}
+  100%{left:125%;top:53%;opacity:0}
+}
+.wish-message{position:relative;z-index:4;max-width:650px;padding:20px;color:#e5eaff;line-height:1.9;text-shadow:0 0 12px #729bff,0 0 25px #8f6bff}
+.wish-result{position:relative;z-index:4;display:none;max-width:600px;padding:20px;color:#ffe7f7;text-shadow:0 0 15px #ff67ba,0 0 30px #a64dff}
 .wish-result.show{display:block;animation:fadeIn 1s ease both}
+#starPage h1,#starPage #wishButton{position:relative;z-index:4}
 
-/* BIG GLOWING BEATING HEART */
+/* PRETTIER BIG GLOWING BEATING HEART */
 #finalPage{background:radial-gradient(circle at center,#59102e,#200719 55%,#070611)}
-.heart-wrap{position:relative;width:220px;height:220px;display:grid;place-items:center;margin:40px auto 28px;cursor:pointer;filter:drop-shadow(0 0 18px #ff003c) drop-shadow(0 0 45px #ff174488);animation:heartBeat 1s ease-in-out infinite}
-.big-heart{position:relative;width:118px;height:118px;background:#ff002f;transform:rotate(-45deg);border-radius:8px;box-shadow:inset -9px -8px 20px #a60028,inset 8px 6px 17px #ff6a8b,0 0 24px #ff003c,0 0 55px #ff003c}
-.big-heart::before,.big-heart::after{content:"";position:absolute;width:118px;height:118px;border-radius:50%;background:#ff1744;box-shadow:inset 5px 5px 12px #ff829a}
-.big-heart::before{top:-59px;left:0}
-.big-heart::after{top:0;left:59px}
-.heart-label{position:absolute;z-index:3;left:50%;top:50%;width:190px;transform:translate(-50%,-50%) rotate(45deg);color:white;font-size:1rem;font-weight:bold;text-shadow:0 0 8px #6e001a;pointer-events:none}
-@keyframes heartBeat{0%,100%{transform:scale(1)}12%{transform:scale(1.12)}25%{transform:scale(1)}38%{transform:scale(1.08)}50%{transform:scale(1)}}
-#loveMessage{display:none;font-size:clamp(1.7rem,7vw,3rem);color:#ffb3dc;text-shadow:0 0 20px #ff1744;animation:fadeIn 1s ease both}
+.heart-wrap{position:relative;width:250px;height:250px;display:grid;place-items:center;margin:30px auto 20px;cursor:pointer;filter:drop-shadow(0 0 12px #ff1744) drop-shadow(0 0 28px #ff174488) drop-shadow(0 0 55px #ff53bc88);animation:heartBeat 1.15s ease-in-out infinite}
+.big-heart{position:relative;width:110px;height:110px;background:linear-gradient(145deg,#ff789e 0%,#ff174f 40%,#c90043 100%);transform:rotate(-45deg);border-radius:10px;box-shadow:inset -9px -8px 20px #a60028,inset 8px 6px 17px #ffb4ca,0 0 25px #ff174f,0 0 55px #ff003c,0 0 90px #ff53bc77}
+.big-heart::before,.big-heart::after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:linear-gradient(145deg,#ff9dbb,#ff1744 65%,#e00048);box-shadow:inset 5px 5px 12px #ffb9ce,0 0 22px #ff174488}
+.big-heart::before{top:-55px;left:0}
+.big-heart::after{top:0;left:55px}
+.heart-wrap::before,.heart-wrap::after{content:"✦";position:absolute;color:#fff2bc;font-size:1.7rem;text-shadow:0 0 8px #fff,0 0 22px #ff9ee8;animation:heartSparkle 2s ease-in-out infinite alternate}
+.heart-wrap::before{top:22px;left:35px}
+.heart-wrap::after{right:30px;bottom:25px;animation-delay:1s}
+.heart-label{position:absolute;z-index:3;left:50%;top:50%;width:190px;transform:translate(-50%,-50%) rotate(45deg);color:white;font-size:.95rem;font-weight:bold;text-shadow:0 0 8px #6e001a,0 0 15px #fff;pointer-events:none}
+@keyframes heartSparkle{from{opacity:.45;transform:scale(.7) rotate(0)}to{opacity:1;transform:scale(1.25) rotate(18deg)}}
+@keyframes heartBeat{0%,100%{transform:scale(1)}12%{transform:scale(1.08)}25%{transform:scale(1)}38%{transform:scale(1.05)}50%{transform:scale(1)}}
+#loveMessage{display:none;font-size:clamp(1.7rem,7vw,3rem);color:#ffb3dc;text-shadow:0 0 20px #ff1744,0 0 45px #ff71c9;animation:fadeIn 1s ease both}
 .choice-buttons{display:flex;gap:20px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:20px;min-height:65px}
 #noButton{position:relative;z-index:5}
 @media(max-width:500px){.planet-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.planet-buttons button{font-size:.85rem}.letter-full{padding:18px;font-size:1rem}.envelope-scene{height:260px}}
+@media(prefers-reduced-motion:reduce){.shooting-star,.heart-wrap,.heart-wrap::before,.heart-wrap::after{animation-duration:5s}}
 </style>
 </head>
 
@@ -130,7 +159,7 @@ video{display:block;width:100%;max-width:850px;max-height:65vh;object-fit:contai
 <div class="cake">🎂</div>
 <button id="blowButton" onclick="blowCandles()">💨 Blow the Candles</button>
 <div id="cakeVideoWrap" style="display:none;width:100%;max-width:760px;margin-top:20px">
-<video id="cakeVideo" src="1791707563583.mp4" controls playsinline></video>
+<video id="cakeVideo" src="1791707563583.mp4" controls autoplay muted loop playsinline preload="auto"></video>
 <button style="margin-top:16px" onclick="showLetter()">💌 Open Your Letter</button>
 </div>
 </section>
@@ -159,7 +188,7 @@ video{display:block;width:100%;max-width:850px;max-height:65vh;object-fit:contai
 <section class="page" id="solarPage">
 <h1>Our Little Universe 🌌</h1>
 <p class="subtitle">Tap every planet to discover its message.</p>
-<video id="solarVideo" src="solar-system.mp4" controls playsinline></video>
+<video id="solarVideo" src="solar-system.mp4" controls autoplay muted loop playsinline preload="auto"></video>
 <div class="planet-buttons">
 <button onclick="planetMessage('You are as hot as me 🔥')">☿ Mercury</button>
 <button onclick="planetMessage('You have as small mind as me (hehe roast maaf kariye malkin) 😂')">♀ Venus</button>
@@ -172,6 +201,30 @@ video{display:block;width:100%;max-width:850px;max-height:65vh;object-fit:contai
 </div>
 <p class="planet-message" id="planetMessage"></p>
 <button onclick="startCherryCinema()">🍒 Enter Cherry 11 Planet</button>
+
+<!-- FOUR PHOTO MEMORIES -->
+<div class="memory-gallery">
+<h2>Our Magical Memories 🌸</h2>
+<p>Four little moments from Cherry's magical world 💗</p>
+<div class="memory-grid">
+<div class="memory-card">
+<img src="cake-party.png" alt="Cherry and her friends laughing and eating birthday cake" loading="lazy">
+<p>Sweet Birthday Moments 🎂</p>
+</div>
+<div class="memory-card">
+<img src="cherry-litchi.png" alt="Cherry playfully pulling Litchi's ear" loading="lazy">
+<p>Cherry and Litchi 😂🍒</p>
+</div>
+<div class="memory-card">
+<img src="purani-haweli.png" alt="Cherry blushing beside smirking Litchi at the magical old mansion" loading="lazy">
+<p>Purani Haweli 🌙</p>
+</div>
+<div class="memory-card">
+<img src="group-hug.png" alt="All the boys and girls sharing a happy group hug" loading="lazy">
+<p>One Big Group Hug 🫂</p>
+</div>
+</div>
+</div>
 </section>
 
 <!-- COLOURFUL CINEMATIC PLANET -->
@@ -212,7 +265,7 @@ video{display:block;width:100%;max-width:850px;max-height:65vh;object-fit:contai
 <h1 class="glow-text">Welcome to Cherry 11 🍒</h1>
 <p class="subtitle">A little world made extra special for you.</p>
 <div class="video-frame">
-<video id="cherryVideo" src="Cherry-11.mp4" controls playsinline></video>
+<video id="cherryVideo" src="Cherry-11.mp4" controls autoplay muted loop playsinline preload="auto"></video>
 </div>
 <button style="margin-top:22px" onclick="showShootingStar()">✨ Look Towards the Sky</button>
 </section>
@@ -220,10 +273,11 @@ video{display:block;width:100%;max-width:850px;max-height:65vh;object-fit:contai
 <!-- SHOOTING STAR AND WISH -->
 <section class="page" id="starPage">
 <div class="star-layer"></div>
-<div class="shooting-star" id="shootingStar"></div>
+<div class="moon" aria-label="Glowing moon"></div>
+<div class="shooting-star" id="shootingStar" role="button" aria-label="Tap the shooting star to make a wish"></div>
 <h1 class="glow-text">Make a Wish, Cherry ✨</h1>
-<p class="wish-message" id="wishMessage">Look carefully at the sky… a shooting star is coming. Tap it and make your most beautiful wish. 🌠</p>
-<button id="wishButton" onclick="makeWish()">🌠 Make Your Wish</button>
+<p class="wish-message" id="wishMessage">Look carefully at the sky… a magical shooting star is coming slowly. Tap it whenever you're ready and make your most beautiful wish. 🌠</p>
+<button id="wishButton" onclick="makeWish()">🌠 Let the Star Appear</button>
 <div class="wish-result" id="wishResult">
 <h2>Your wish is on its way, Cherry! 💫</h2>
 <p>May your days be filled with happiness, love, beautiful surprises and all the things your heart wishes for. ❤️</p>
@@ -255,6 +309,18 @@ function showPage(id){
   pages.forEach(p=>p.classList.remove("active"));
   document.getElementById(id).classList.add("active");
   window.scrollTo({top:0,behavior:"smooth"});
+
+  // Try autoplay for videos on the newly opened page.
+  // Muted looping video is more likely to autoplay on phones.
+  document.querySelectorAll("video").forEach(v=>{
+    if(v.closest(".page") && v.closest(".page").id===id){
+      v.muted=true;
+      v.loop=true;
+      v.play().catch(()=>{});
+    }else{
+      v.pause();
+    }
+  });
 }
 
 function beginSurprise(){
@@ -268,6 +334,9 @@ function blowCandles(){
   document.getElementById("candles").textContent="✨ ✨ ✨";
   document.getElementById("blowButton").style.display="none";
   document.getElementById("cakeVideoWrap").style.display="block";
+  const v=document.getElementById("cakeVideo");
+  v.currentTime=0;
+  v.play().catch(()=>{});
 }
 
 function showLetter(){
@@ -354,37 +423,68 @@ function startCherryCinema(){
     showPage("videoPage");
     const v=document.getElementById("cherryVideo");
     v.currentTime=0;
+    v.muted=true;
+    v.loop=true;
     v.play().catch(()=>{});
   },7500);
 }
 
+/* SLOW SHOOTING STAR */
+let wishTimer;
 function showShootingStar(){
   document.getElementById("cherryVideo").pause();
   showPage("starPage");
-  document.getElementById("starPage").classList.remove("star-active");
+
+  const starPage=document.getElementById("starPage");
+  const star=document.getElementById("shootingStar");
+  clearTimeout(wishTimer);
+
+  starPage.classList.remove("star-active");
   document.getElementById("wishResult").classList.remove("show");
   document.getElementById("wishButton").style.display="inline-block";
+  document.getElementById("wishButton").textContent="🌠 Let the Star Appear";
   document.getElementById("wishMessage").style.display="block";
-  void document.getElementById("starPage").offsetWidth;
-  document.getElementById("starPage").classList.add("star-active");
+  document.getElementById("wishMessage").textContent="Look carefully at the sky… a magical shooting star is coming slowly. Tap it whenever you're ready and make your most beautiful wish. 🌠";
+  star.style.pointerEvents="none";
+  star.onclick=null;
 }
 
 function makeWish(){
+  const starPage=document.getElementById("starPage");
   const star=document.getElementById("shootingStar");
+
+  clearTimeout(wishTimer);
+  starPage.classList.remove("star-active");
+  void starPage.offsetWidth;
+
+  document.getElementById("wishButton").style.display="none";
+  document.getElementById("wishMessage").textContent="Here it comes, Cherry… watch its beautiful glow and make your wish when you're ready. ✨🌙";
+
   star.style.pointerEvents="auto";
   star.style.cursor="pointer";
   star.onclick=finishWish;
-  document.getElementById("wishMessage").textContent="Quick, Cherry! Tap the shooting star and make your wish! 🌠";
-  setTimeout(()=>{
-    if(!document.getElementById("wishResult").classList.contains("show"))finishWish();
-  },3000);
+
+  starPage.classList.add("star-active");
+
+  // Give her time to read and tap the slowly moving star.
+  // If she doesn't tap it, show the wish message after the star finishes.
+  wishTimer=setTimeout(()=>{
+    if(!document.getElementById("wishResult").classList.contains("show")){
+      finishWish();
+    }
+  },12000);
 }
 
 function finishWish(){
+  const result=document.getElementById("wishResult");
+  if(result.classList.contains("show"))return;
+
+  clearTimeout(wishTimer);
   document.getElementById("wishButton").style.display="none";
   document.getElementById("wishMessage").style.display="none";
-  document.getElementById("wishResult").classList.add("show");
+  result.classList.add("show");
   document.getElementById("shootingStar").onclick=null;
+  document.getElementById("shootingStar").style.pointerEvents="none";
 }
 
 function showFinal(){
