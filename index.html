@@ -99,6 +99,96 @@ p{line-height:1.75;max-width:780px}
  .person {
   display: none !important;
 }
+ 
+/* ✨ Smoother, glowing planet orbits */
+.orbit {
+  animation-timing-function: linear;
+  will-change: transform;
+}
+
+.orbit:nth-of-type(2) {
+  animation-duration: 24s;
+}
+
+.orbit:nth-of-type(3) {
+  animation-duration: 32s;
+}
+
+.orbit:nth-of-type(4) {
+  animation-duration: 42s;
+}
+
+.planet {
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.45),
+    0 0 24px rgba(180, 130, 255, 0.35);
+  transition: filter 0.4s ease;
+}
+
+.planet:active {
+  filter: brightness(1.8);
+}
+
+/* 🌸 Flowers drift and rotate as they fall */
+.petal {
+  animation: flowerDrift 7s linear forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes flowerDrift {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(35px, 50vh, 0) rotate(220deg);
+  }
+  100% {
+    transform: translate3d(-25px, 110vh, 0) rotate(480deg);
+    opacity: 0;
+  }
+}
+
+/* 💗 Hearts float down with a gentle sideways sway */
+.heart {
+  animation: heartDrift 8s linear forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes heartDrift {
+  0% {
+    transform: translate3d(0, -5vh, 0) scale(0.7) rotate(-10deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(25px, 50vh, 0) scale(1) rotate(12deg);
+  }
+  100% {
+    transform: translate3d(-20px, 110vh, 0) scale(0.8) rotate(-12deg);
+    opacity: 0;
+  }
+}
+
+/* 🌷 Gentle glow for the birthday atmosphere */
+.big-heart {
+  animation: floatHeart 3s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.06);
+  }
+}
+
 </style>
 </head>
 <body>
