@@ -3,669 +3,1125 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#10091f">
-<title>For Bhawani Babe 🍒💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bhawani Babe 🍒💗</title>
 
 <style>
-*{box-sizing:border-box}
-:root{--pink:#ff91dc;--purple:#a67aff;--gold:#ffe2a6}
-body{
- margin:0;background:#10091f;color:white;
- font-family:Georgia,serif;text-align:center;
- overflow-x:hidden
-}
-button{font:inherit;cursor:pointer;touch-action:manipulation}
-button:focus-visible{outline:3px solid white;outline-offset:4px}
-.screen{
- display:none;min-height:100vh;min-height:100svh;
- padding:30px 14px 40px;
- align-items:center;justify-content:center;flex-direction:column;
- position:relative;isolation:isolate;overflow:hidden
-}
-.screen.active{display:flex}
-h1{
- font-size:clamp(2.2rem,8vw,4.4rem);
- color:#fff0fb;
- text-shadow:0 0 16px #ff5ac8,0 0 35px #9867ff;
- margin:15px 0
-}
-h2{color:#ffe0fa}
-p{line-height:1.8;max-width:760px}
-.small{font-size:.85rem;letter-spacing:2px;color:#ffd2f1}
-.glow{animation:glow 2s ease-in-out infinite alternate}
-@keyframes glow{to{text-shadow:0 0 24px #ff60d0,0 0 55px #9669ff}}
-.btn{
- border:1px solid #ffc7ed;border-radius:40px;
- padding:13px 22px;margin:8px;color:white;
- background:linear-gradient(120deg,#fa55b4,#7956ed);
- box-shadow:0 0 22px #d66dff44;
- position:relative;z-index:4
-}
-.btn:active{transform:scale(.96)}
-.card{
- width:min(900px,100%);padding:22px 14px;
- border:1px solid #ffffff30;border-radius:25px;
- background:#ffffff09;box-shadow:0 0 35px #b46cff18
-}
-#musicButton{
- position:fixed;right:12px;top:12px;z-index:200;
- width:48px;height:48px;border-radius:50%;
- border:1px solid #ffc7ed;color:white;
- background:#41204f;box-shadow:0 0 18px #ff70d788;
- font-size:21px
-}
-#musicStatus{
- position:fixed;right:15px;top:64px;z-index:200;
- font-size:10px;color:#ffd6f2;pointer-events:none
-}
-.heart{font-size:4rem;animation:heartbeat 1.5s infinite}
-@keyframes heartbeat{50%{transform:scale(1.1)}}
-.stars{
- position:fixed;inset:0;z-index:-1;pointer-events:none;
- background-image:
- radial-gradient(white 1px,transparent 1.5px),
- radial-gradient(#ffb8ed 1px,transparent 1.5px),
- radial-gradient(#b9b9ff 1px,transparent 1.5px);
- background-size:47px 47px,83px 83px,119px 119px;
- background-position:0 0,24px 31px,61px 15px;
- animation:twinkle 4s infinite alternate
-}
-@keyframes twinkle{to{opacity:.45;filter:brightness(1.7)}}
-.video{
- display:block;width:100%;max-width:720px;
- max-height:58vh;object-fit:contain;
- margin:18px auto;border-radius:18px;
- background:#080513;border:1px solid #ffffff30
-}
-.letter{
- display:none;max-width:800px;margin:22px auto;padding:25px;
- text-align:left;color:#713c5e;
- border-radius:20px;background:linear-gradient(145deg,#fffaf8,#ffe0f0);
- line-height:1.9;box-shadow:0 0 35px #ff83c766
-}
-.letter h2{text-align:center;color:#c34891}
-.envelope{
- position:relative;width:min(330px,90%);height:175px;
- display:grid;place-items:center;overflow:hidden;
- background:#ffc8e5;border-radius:12px;color:#713458;
- border:0;box-shadow:0 0 35px #ff69c8
-}
-.env-flap{
- position:absolute;inset:0;background:#ffb3db;
- clip-path:polygon(0 0,100% 0,50% 65%);
- transform-origin:top;transition:transform .8s
-}
-.envelope.open .env-flap{transform:rotateX(180deg)}
-.env-paper{padding:15px;color:#713458}
-.rose,.rising-heart{
- position:fixed;z-index:150;pointer-events:none;
- animation:fall linear forwards
-}
-.rose{top:-45px}
-.rising-heart{bottom:-40px}
-@keyframes fall{
- to{transform:translate(var(--drift),110vh) rotate(600deg);opacity:0}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* FULL SOLAR SYSTEM */
-.space{
- background:radial-gradient(ellipse at center,#241449 0%,#10091f 62%,#05040c 100%);
- padding:22px 5px 25px
+:root {
+  --pink: #ff8fcb;
+  --deep-pink: #ff4fa3;
+  --purple: #bda1ff;
 }
-.space h1{font-size:clamp(1.7rem,6vw,3.2rem);margin:12px 0}
-.space .small{margin-top:42px}
-.solar-stage{
- width:min(94vw,720px);
- aspect-ratio:1;position:relative;
- margin:8px auto 4px;flex-shrink:0;
- transition:transform 1.35s cubic-bezier(.2,.8,.2,1),opacity 1s;
- transform-origin:50% 2%
-}
-.orbit{
- position:absolute;left:50%;top:50%;
- width:calc(var(--r)*1%);aspect-ratio:1;
- border:1px solid rgba(223,207,255,.35);
- border-radius:50%;
- transform:translate(-50%,-50%);
- animation:orbitSpin var(--speed) linear infinite;
-}
-@keyframes orbitSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-.sun{
- position:absolute;left:50%;top:50%;
- width:12%;aspect-ratio:1;transform:translate(-50%,-50%);
- border-radius:50%;
- background:radial-gradient(circle,#fff 0%,#e8e8e8 27%,#8e8eab 57%,#39344d 75%,transparent 76%);
- box-shadow:0 0 15px #fff,0 0 35px #d9d5ff,0 0 70px #8d76ff;
- display:grid;place-items:center;font-size:clamp(19px,5vw,39px);
- animation:sunPulse 3s ease-in-out infinite alternate
-}
-@keyframes sunPulse{to{box-shadow:0 0 25px #fff,0 0 55px #d9d5ff,0 0 100px #8d76ff}}
-.orbiter{
- position:absolute;top:0;left:50%;
- transform:translate(-50%,-50%);
-}
-.planet{
- width:clamp(27px,6.5vw,48px);
- aspect-ratio:1;border-radius:50%;
- padding:0;border:1px solid #ffffff90;
- display:flex;align-items:center;justify-content:center;
- position:relative;color:white;
- box-shadow:inset -7px -5px 10px #0008,0 0 12px #ffffff38;
- transition:filter .2s,box-shadow .2s
-}
-.planet:active{filter:brightness(1.6);box-shadow:0 0 25px white}
-.planet::after{
- content:attr(data-label);
- position:absolute;top:calc(100% + 3px);left:50%;
- transform:translateX(-50%);white-space:nowrap;
- font:clamp(8px,2.1vw,12px) Arial,sans-serif;
- color:#fff;text-shadow:0 0 6px #b89aff;
- pointer-events:none
-}
-.mercury{background:radial-gradient(circle at 30% 25%,#d7d0c8,#77747d 48%,#39323e)}
-.venus{background:radial-gradient(circle at 30% 25%,#fff0ad,#e8a45f 45%,#9e493a)}
-.earth{background:radial-gradient(circle at 30% 25%,#7fffe4,#227ad7 45%,#143c79)}
-.mars{background:radial-gradient(circle at 30% 25%,#ffd09a,#e85e3b 45%,#762c34)}
-.jupiter{background:repeating-linear-gradient(0deg,#9c5e45 0 5px,#eac29b 5px 10px,#d38a61 10px 14px)}
-.saturn{
- background:radial-gradient(circle at 30% 25%,#fff0b0,#d6b47a 50%,#8d684c)
-}
-.saturn::before{
- content:"";position:absolute;width:175%;height:45%;
- border:3px solid #ead3a1;border-radius:50%;
- transform:rotate(-25deg);z-index:-1
-}
-.uranus{background:radial-gradient(circle at 30% 25%,#d5ffff,#65d8e8 55%,#3188b4)}
-.neptune{background:radial-gradient(circle at 30% 25%,#b9d9ff,#4b77e8 48%,#17285f)}
-.cherry{
- width:clamp(33px,8vw,58px);
- background:radial-gradient(circle at 27% 22%,#fff0ff 0%,#ffb4ef 16%,#fa58ce 42%,#a32cf1 70%,#48246f);
- box-shadow:0 0 14px #ff7be5,0 0 28px #c65bff,0 0 48px #f36bcf77;
-}
-.cherry::before{
- content:"";position:absolute;width:155%;height:42%;
- border:2px solid #ffcaf7;border-radius:50%;
- transform:rotate(-24deg);box-shadow:0 0 10px #ff85e8
-}
-.cherry::after{
- content:"CHERRY-11";top:calc(100% + 4px);
- font-size:clamp(7px,1.7vw,10px)
-}
-.orbit-note{
- width:min(94%,520px);min-height:85px;
- margin:5px auto 8px;padding:15px 12px;
- border-radius:18px;border:1px solid #ffffff30;
- background:#ffffff0b;display:flex;
- justify-content:center;align-items:center;
- font-size:clamp(.95rem,3.4vw,1.15rem);line-height:1.6
-}
-.space-hint{font-size:.83rem;color:#e7d5ff;margin:4px 0 10px}
 
-/* CHERRY DISCOVERY + ZOOM */
-#cherryPrompt{
- display:none;position:fixed;inset:0;z-index:70;
- align-items:center;justify-content:center;padding:20px;
- background:#080512dd;backdrop-filter:blur(7px)
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #080817;
+  color: white;
+  overflow-x: hidden;
+  text-align: center;
 }
-#cherryPrompt.show{display:flex}
-.prompt-card{
- width:min(420px,100%);padding:25px 18px;
- border-radius:25px;border:1px solid #ffb6f3;
- background:linear-gradient(145deg,#382052,#17102c);
- box-shadow:0 0 50px #f46be7
-}
-#flash{
- position:fixed;inset:0;background:white;opacity:0;
- pointer-events:none;z-index:180
-}
-#flash.on{animation:flashIn 1.5s ease-in-out}
-@keyframes flashIn{
- 0%{opacity:0}
- 16%{opacity:1}
- 38%{opacity:.85}
- 100%{opacity:0}
-}
-.space.zooming .solar-stage{
- transform:scale(9);opacity:0
-}
-.space.zooming .space-heading{opacity:0;transition:opacity .35s}
 
-/* CHERRY PLANET WORLD */
-#cherry{
- background:radial-gradient(ellipse at 50% 25%,#653c86,#241338 57%,#0c0719)
+button {
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
-.cherry-title{color:#ffd6fa;text-shadow:0 0 20px #ff62d5,0 0 55px #b15aff}
-.world{
- position:relative;isolation:isolate;overflow:hidden;
- width:min(800px,100%);min-height:340px;
- border:1px solid #ffb7f580;border-radius:25px;
- background:linear-gradient(#28133f 0%,#694182 48%,#e28bc8 100%);
- box-shadow:0 0 45px #f16fe755;padding:18px 12px
-}
-.world::before{
- content:"";position:absolute;z-index:-1;inset:0;
- background:radial-gradient(circle at 50% 45%,#fff9 0 1px,transparent 2px);
- background-size:31px 37px;animation:twinkle 2.8s infinite alternate
-}
-.world-planet{
- width:180px;max-width:55vw;aspect-ratio:1;
- border-radius:50%;margin:25px auto 20px;position:relative;
- background:radial-gradient(circle at 30% 25%,#fff3ff,#ffb5f0 20%,#ee64d1 45%,#a34bdb 73%,#4c276f);
- box-shadow:inset -25px -15px 35px #4b1c7077,0 0 30px #ffb0f7,0 0 75px #d76aff;
- animation:floatPlanet 5s ease-in-out infinite
-}
-.world-planet::before{
- content:"";position:absolute;width:145%;height:32%;
- border:5px solid #ffd7fa;border-radius:50%;
- top:37%;left:-22%;transform:rotate(-22deg);
- box-shadow:0 0 16px #ffa6f4
-}
-@keyframes floatPlanet{50%{transform:translateY(-9px) rotate(3deg)}}
-.butterfly{position:absolute;font-size:27px;animation:fly 5s ease-in-out infinite alternate}
-.b1{top:18%;left:9%}.b2{top:30%;right:10%;animation-delay:-2s}
-.b3{top:65%;left:12%;animation-delay:-1s}
-@keyframes fly{to{transform:translate(25px,-20px) rotate(15deg)}}
-.drawing{font-size:4rem}
 
-/* ENDING */
-.names{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-.names span{padding:8px 11px;border:1px solid #ffffff30;border-radius:25px;background:#ffffff12}
-#answer{min-height:42px}
-#no{transition:transform .12s}
-@media(max-width:370px){
- .screen{padding-left:7px;padding-right:7px}
- .solar-stage{width:97vw}
- .orbit-note{font-size:.9rem}
+.page {
+  display: none;
+  min-height: 100svh;
+  width: 100%;
+  padding: 25px 16px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+
+.page.active {
+  display: flex;
+  animation: pageAppear 0.8s ease both;
+}
+
+@keyframes pageAppear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h1, h2 {
+  color: #ffb6df;
+  text-shadow: 0 0 18px #ff4fa3;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 6vw, 2.5rem);
+}
+
+p {
+  line-height: 1.8;
+}
+
+button.main-btn {
+  border: 1px solid #ffc5e8;
+  border-radius: 30px;
+  padding: 13px 25px;
+  margin: 12px;
+  color: white;
+  background: linear-gradient(135deg, #ff4fa3, #9d65ff);
+  box-shadow: 0 0 20px #ff4fa366;
+  font-size: 1rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+button.main-btn:active {
+  transform: scale(0.95);
+}
+
+/* MUSIC BUTTON */
+
+.music-btn {
+  position: fixed;
+  z-index: 1000;
+  right: 12px;
+  top: 12px;
+  border: 1px solid #ffc5e8;
+  border-radius: 25px;
+  padding: 10px 13px;
+  background: #211331eF;
+  color: white;
+  font-size: 13px;
+}
+
+/* PAGE 1: WELCOME */
+
+#welcome {
+  background:
+    radial-gradient(ellipse at top, #5a2466, transparent 55%),
+    linear-gradient(145deg, #09091b, #291039, #101026);
+}
+
+.welcome-cherries {
+  font-size: 2.7rem;
+  margin-bottom: 22px;
+  animation: floaty 3s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.small-text {
+  color: #f8c6e7;
+  max-width: 500px;
+  margin: 0 auto 18px;
+}
+
+/* PAGE 2: CAKE AND CLAPPING VIDEO */
+
+#cake-page {
+  background:
+    radial-gradient(circle at 50% 40%, #57214f, transparent 55%),
+    linear-gradient(160deg, #100c28, #2c1034, #0a0a1b);
+}
+
+.cake {
+  font-size: clamp(5rem, 18vw, 8rem);
+  filter: drop-shadow(0 0 25px #ff71c5);
+  animation: cakeGlow 2s infinite alternate;
+}
+
+@keyframes cakeGlow {
+  from { filter: drop-shadow(0 0 12px #ff71c5); }
+  to { filter: drop-shadow(0 0 32px #ff71c5); }
+}
+
+.video-frame {
+  width: min(90%, 430px);
+  border-radius: 20px;
+  border: 2px solid #ffb6df;
+  overflow: hidden;
+  background: #120c24;
+  box-shadow: 0 0 28px #ff5dbb66;
+  margin: 15px auto;
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 52svh;
+  object-fit: contain;
+  background: #120c24;
+}
+
+/* PAGE 3: LETTER */
+
+#letter-page {
+  background:
+    radial-gradient(circle at top, #55205b, transparent 55%),
+    #100d20;
+}
+
+.letter {
+  width: min(95%, 650px);
+  max-height: 70svh;
+  overflow-y: auto;
+  padding: 24px;
+  border: 1px solid #ffacd9;
+  border-radius: 20px;
+  background: #25172beF;
+  box-shadow: 0 0 30px #ff63bb33;
+  text-align: left;
+  line-height: 1.9;
+  color: #ffe8f5;
+}
+
+.letter p {
+  margin-bottom: 15px;
+}
+
+.signature {
+  text-align: right;
+  color: #ffaddc;
+  font-size: 1.1rem;
+}
+
+/* PAGE 4: SOLAR SYSTEM */
+
+#solar-page {
+  background: #03030b;
+  padding: 65px 8px 20px;
+  justify-content: flex-start;
+}
+
+#solar-page h2 {
+  margin: 10px 0 6px;
+  position: relative;
+  z-index: 4;
+}
+
+.solar-subtitle {
+  color: #d7c7ff;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 4;
+}
+
+.space {
+  position: relative;
+  width: min(96vw, 650px);
+  height: min(96vw, 650px);
+  min-height: 320px;
+  max-height: 650px;
+  margin: 10px auto;
+  flex-shrink: 0;
+  transition: transform 1.1s ease, opacity 1s ease;
+  transform-origin: 50% 50%;
+}
+
+.space-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.solar-stage {
+  position: absolute;
+  inset: 0;
+  transition: transform 1.2s cubic-bezier(.2,.8,.2,1),
+              opacity 1.1s ease;
+}
+
+.space::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 15%, #07071355 70%),
+    repeating-radial-gradient(circle, #ffffff0c 0 1px, transparent 1px 38px);
+  pointer-events: none;
+}
+
+.sun {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 13%;
+  height: 13%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffbd0, #ffb52e 48%, #ff5a24 72%, transparent 74%);
+  box-shadow: 0 0 25px #ff9d2e, 0 0 55px #ff5a24aa;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(18px, 5vw, 35px);
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--r) * 2);
+  height: calc(var(--r) * 2);
+  border: 1px solid #d9d0ff55;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbitSpin var(--speed) linear infinite;
+  z-index: 2;
+}
+
+@keyframes orbitSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.planet {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(23px, 5.5vw, 36px);
+  height: clamp(23px, 5.5vw, 36px);
+  border: 1px solid #ffffffaa;
+  border-radius: 50%;
+  padding: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: clamp(9px, 2vw, 12px);
+  font-weight: bold;
+  text-shadow: 0 1px 2px #000;
+  box-shadow: 0 0 12px #ffffff44;
+  animation: planetCounterSpin var(--speed) linear infinite;
+  animation-direction: reverse;
+  pointer-events: auto;
+}
+
+@keyframes planetCounterSpin {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+.planet:focus-visible,
+.cherry:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 4px;
+}
+
+.mercury { background: #aaa59f; }
+.venus { background: #e7a85b; }
+.earth { background: #2788ff; }
+.mars { background: #e15b3d; }
+.jupiter { background: #c99873; }
+.saturn { background: #e7d49a; color: #442c1d; }
+.uranus { background: #75d9e2; color: #13363c; }
+.neptune { background: #3159dc; }
+
+.saturn::after {
+  content: "";
+  position: absolute;
+  width: 155%;
+  height: 35%;
+  border: 2px solid #ffe8a8;
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+
+.cherry {
+  position: absolute;
+  top: -17px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(38px, 9vw, 55px);
+  height: clamp(38px, 9vw, 55px);
+  border: 2px solid #ffc7ec;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #ffb8e8, #ff309f 48%, #8111c9);
+  color: white;
+  box-shadow: 0 0 20px #ff36bf, 0 0 40px #a044ff;
+  font-size: 10px;
+  font-weight: bold;
+  animation: cherryPulse 1.4s ease-in-out infinite alternate,
+             planetCounterSpin var(--speed) linear infinite reverse;
+}
+
+@keyframes cherryPulse {
+  from { box-shadow: 0 0 12px #ff36bf; }
+  to { box-shadow: 0 0 35px #ff36bf, 0 0 55px #a044ff; }
+}
+
+/* PLANET MESSAGE ON SCREEN */
+
+.planet-message {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.85);
+  z-index: 500;
+  width: min(88vw, 460px);
+  padding: 24px 20px;
+  border-radius: 22px;
+  border: 2px solid #ffc5e8;
+  background: linear-gradient(145deg, #27143cf5, #6b2468f5);
+  box-shadow: 0 0 35px #ff54c6, 0 0 80px #b25aff66;
+  color: white;
+  font-size: clamp(1.15rem, 4.5vw, 1.65rem);
+  line-height: 1.6;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+
+.planet-message.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cherry-prompt {
+  position: relative;
+  z-index: 4;
+  max-width: 340px;
+  color: #ffcced;
+  margin: 5px auto 10px;
+  line-height: 1.6;
+}
+
+#explore-cherry {
+  position: relative;
+  z-index: 4;
+}
+
+/* CHERRY-11 LANDING EFFECT */
+
+#landing-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  background: white;
+}
+
+#landing-flash.flash {
+  visibility: visible;
+  animation: landingFlash 1.35s ease-in-out forwards;
+}
+
+@keyframes landingFlash {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  32% { opacity: 0.12; }
+  43% { opacity: 0.95; }
+  58% { opacity: 0; }
+  72% { opacity: 0.85; }
+  100% { opacity: 0; }
+}
+
+.space.zooming .solar-stage {
+  transform: scale(12);
+  opacity: 0;
+}
+
+.space.zooming {
+  transform: scale(1.12);
+}
+
+/* CHERRY-11 PAGE */
+
+#cherry-page {
+  background:
+    radial-gradient(ellipse at 50% 25%, #8d287c, transparent 58%),
+    linear-gradient(150deg, #140b2e, #4b174e, #110b24);
+}
+
+#cherry-page .video-frame {
+  width: min(94%, 520px);
+}
+
+#cherry-page .video-frame video {
+  max-height: 58svh;
+}
+
+.cherry-caption {
+  max-width: 550px;
+  color: #ffe2f5;
+  margin: 12px auto;
+}
+
+/* DRAWING UNIVERSE */
+
+#drawing-page {
+  background:
+    radial-gradient(circle at top, #422b6d, transparent 55%),
+    #0d0b1c;
+}
+
+.art-card {
+  width: min(94%, 550px);
+  padding: 25px 20px;
+  border-radius: 24px;
+  background: #251a3de8;
+  border: 1px solid #c7a7ff;
+  box-shadow: 0 0 28px #ad78ff44;
+}
+
+.art-emoji {
+  font-size: clamp(3.5rem, 14vw, 6rem);
+  margin: 12px;
+}
+
+/* CHEERING SQUAD */
+
+#cheering-page {
+  background:
+    radial-gradient(circle at top, #5d2058, transparent 55%),
+    #110b21;
+}
+
+.cheer-emoji {
+  font-size: clamp(2.4rem, 10vw, 4.5rem);
+  margin: 12px;
+  animation: floaty 2s ease-in-out infinite;
+}
+
+/* FINAL PAGE */
+
+#final-page {
+  background:
+    radial-gradient(ellipse at center, #70265d, transparent 65%),
+    linear-gradient(150deg, #0c0b21, #30143f, #0b0b1a);
+}
+
+.final-hearts {
+  font-size: 2rem;
+  margin: 12px;
+  animation: floaty 2s ease-in-out infinite;
+}
+
+.final-message {
+  max-width: 520px;
+  color: #ffe4f4;
+  margin-bottom: 15px;
+}
+
+#no-message {
+  display: none;
+  max-width: 330px;
+  color: #ffd0eb;
+  margin: 10px auto;
+}
+
+/* SMALL SCREENS */
+
+@media (max-width: 380px) {
+  #solar-page {
+    padding-top: 60px;
+  }
+
+  .space {
+    width: 96vw;
+    height: 96vw;
+    min-height: 290px;
+  }
+
+  .letter {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit,
+  .planet,
+  .cherry,
+  .cake,
+  .welcome-cherries {
+    animation-duration: 12s;
+  }
 }
 </style>
 </head>
 
 <body>
-<div class="stars"></div>
-<div id="rain"></div>
-<div id="flash"></div>
 
-<!-- ONE AUDIO PLAYER FOR THE WHOLE WEBSITE -->
 <audio id="birthdayMusic" loop preload="auto">
- <source src="meri-laila.mp3" type="audio/mpeg">
+  <source src="meri-laila.mp3" type="audio/mpeg">
 </audio>
-<button id="musicButton" onclick="toggleMusic()" aria-label="Play or pause birthday music">🎵</button>
-<div id="musicStatus">MUSIC</div>
 
-<!-- WELCOME -->
-<section class="screen active" id="welcome">
- <div class="heart">🌸💗🌸</div>
- <p class="small">A UNIVERSE MADE WITH LOVE</p>
- <h1 class="glow">For Bhawani Babe</h1>
- <p>My favourite artist deserves the most magical birthday surprise. ✨</p>
- <button class="btn" onclick="start()">Open your birthday surprise ✨</button>
- <p class="small">P.S. Tap the music button if the song doesn't start 🎶</p>
+<button class="music-btn" id="musicButton" onclick="toggleMusic()">
+  🎵 Music: OFF
+</button>
+
+<div id="landing-flash"></div>
+
+<!-- PAGE 1: WELCOME -->
+
+<section class="page active" id="welcome">
+  <div class="welcome-cherries">🍒💗🍒</div>
+  <h1>For Bhawani Babe</h1>
+  <p class="small-text">
+    A little universe made with love, memories, art and a tiny bit of madness…
+    just for you.
+  </p>
+  <p style="color:#ffc7e8;margin-bottom:10px;">
+    Are you ready for your little birthday surprise? ✨
+  </p>
+  <button class="main-btn" onclick="startBirthday()">
+    Start your surprise 💌
+  </button>
 </section>
 
-<!-- BIRTHDAY -->
-<section class="screen" id="cake">
- <div class="card">
-  <p class="small">MAKE A WISH, BIRTHDAY GIRL</p>
-  <h1>Happy Birthday, Bhawani! 🎂</h1>
-  <div style="font-size:7rem">🎂</div>
-  <p id="cakeWords">Close your eyes and make a wish.</p>
-  <button class="btn" onclick="blow()">Blow the candles 🌬️</button>
-  <div id="claps" style="font-size:2rem;display:none">👏 🎉 👏 💗 👏 🎉 👏</div>
-  <video class="video" controls playsinline preload="metadata">
-   <source src="1791707563583.mp4" type="video/mp4">
-  </video>
-  <button class="btn" onclick="go('letterScreen')">Open your letter 💌</button>
- </div>
+<!-- PAGE 2: CAKE + CLAPPING VIDEO -->
+
+<section class="page" id="cake-page">
+  <h1>Happy Birthday!! 🎂</h1>
+  <div class="cake">🎂</div>
+  <h2>Make a wish, birthday girl!</h2>
+
+  <div class="video-frame">
+    <video
+      id="clappingVideo"
+      src="1791707563583.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto">
+    </video>
+  </div>
+
+  <p class="small-text">
+    A little birthday applause for the most special girl! 👏💗
+  </p>
+
+  <button class="main-btn" onclick="goTo('letter-page')">
+    Open your letter 💌
+  </button>
 </section>
 
-<!-- LETTER -->
-<section class="screen" id="letterScreen">
- <p class="small">A LETTER WRITTEN FROM THE HEART</p>
- <h1>For you, Bhawani 💌</h1>
- <button class="envelope" id="envelope" onclick="openLetter()">
-  <span class="env-paper">Tap to open your letter 🌹</span>
-  <span class="env-flap"></span>
- </button>
- <p>Open it for a little rose-storm of love. 🌹</p>
+<!-- PAGE 3: LETTER -->
 
- <article class="letter" id="letter">
-  <h2>🌹 Dear Bhawani Babe 🌹</h2>
-  <p>You are one of the best friends that I have ever got. Today is a precious day, and I hope you enjoy every single day filled with laughter and happiness.</p>
-  <p>I know these 4–5 months have been really difficult for you. But whenever you look back, remember this: Eisha isn't standing behind you—Eisha is standing with you.</p>
-  <p>I'll keep trying to maintain our friendship till the end. I'll be there whenever you need me. A great artist, a great daughter, a great friend—and what not! You deserve the world.</p>
-  <p>May God bless you with endless reasons to smile, courage for every hard day, people who value your heart, and dreams that come true.</p>
-  <p><b>Love you so much, babe. 🌸❤️</b></p>
-  <p style="text-align:right">Always cheering for you,<br><b>Your Litchi 🍒💗</b></p>
- </article>
- <button class="btn" onclick="go('space')">Travel to our galaxy 🌌</button>
+<section class="page" id="letter-page">
+  <h1>A Letter for You 💗</h1>
+
+  <div class="letter">
+    <p>Dear Bhawani Babe, 🍒</p>
+
+    <p>
+      Happy Birthday to one of the most special people in my little world.
+      Today is all about YOU, and I hope it brings you the same happiness
+      that you bring into the lives of the people who love you.
+    </p>
+
+    <p>
+      You are not just a friend to me. You are a part of my memories,
+      my laughter, my silly moments and all those little things that make
+      friendship so precious.
+    </p>
+
+    <p>
+      Never stop being the artist you are, the daughter you are, and the
+      friend who makes ordinary moments feel special. Keep creating,
+      dreaming, laughing and being your wonderfully unique self.
+    </p>
+
+    <p>
+      Even when life gets busy and things change, I hope you always remember
+      that you deserve love, peace, success and a thousand beautiful reasons
+      to smile.
+    </p>
+
+    <p>
+      May this new year of your life bring you new adventures, endless
+      inspiration, beautiful memories and all the happiness your heart
+      can hold.
+    </p>
+
+    <p>
+      Today, tomorrow and always, keep shining, birthday girl. 🍒✨
+    </p>
+
+    <p class="signature">
+      Your Litchi 🍒💗
+    </p>
+  </div>
+
+  <button class="main-btn" onclick="goTo('solar-page')">
+    Enter our solar system 🌌
+  </button>
 </section>
 
-<!-- SOLAR SYSTEM: LARGE, CENTRED, AND ALONE -->
-<section class="screen space" id="space">
- <div class="space-heading">
-  <p class="small">YOUR PERSONAL GALAXY</p>
-  <h1>Our Solar System 🪐</h1>
-  <p class="space-hint">Tap any revolving planet to reveal its message ✨</p>
- </div>
+<!-- PAGE 4: SOLAR SYSTEM -->
 
- <div class="solar-stage" id="solarStage">
-  <div class="sun" title="The Sun">☀️</div>
+<section class="page" id="solar-page">
+  <h2>Our Little Solar System 🌌</h2>
+  <p class="solar-subtitle">Tap each planet to reveal its message 💗</p>
 
-  <div class="orbit" style="--r:17;--speed:5s">
-   <div class="orbiter">
-    <button class="planet mercury" data-label="Mercury" aria-label="Mercury" onclick="planetTap('Mercury')"></button>
-   </div>
-  </div>
-  <div class="orbit" style="--r:26;--speed:8s">
-   <div class="orbiter">
-    <button class="planet venus" data-label="Venus" aria-label="Venus" onclick="planetTap('Venus')"></button>
-   </div>
-  </div>
-  <div class="orbit" style="--r:35;--speed:11s">
-   <div class="orbiter">
-    <button class="planet earth" data-label="Earth" aria-label="Earth" onclick="planetTap('Earth')"></button>
-   </div>
-  </div>
-  <div class="orbit" style="--r:44;--speed:15s">
-   <div class="orbiter">
-    <button class="planet mars" data-label="Mars" aria-label="Mars" onclick="planetTap('Mars')"></button>
-   </div>
-  </div>
-  <div class="orbit" style="--r:53;--speed:20s">
-   <div class="orbiter">
-    <button class="planet jupiter" data-label="Jupiter" aria-label="Jupiter" onclick="planetTap('Jupiter')"></button>
-   </div>
-  </div>
-  <div class="orbit" style="--r:62;--speed:25s">
-   <div class="orbiter">
-    <button class="planet saturn" data-label="Saturn" aria-label="Saturn" onclick="planetTap('Saturn')"></button>
-   </div>
-  </div>
-  <div class="orbit" style="--r:71;--speed:30s">
-   <div class="orbiter">
-    <button class="planet uranus" data-label="Uranus" aria-label="Uranus" onclick="planetTap('Uranus')"></button>
-   </div>
-  </div>
-  <div class="orbit" style="--r:80;--speed:36s">
-   <div class="orbiter">
-    <button class="planet neptune" data-label="Neptune" aria-label="Neptune" onclick="planetTap('Neptune')"></button>
-   </div>
-  </div>
-  <div class="orbit" style="--r:94;--speed:44s">
-   <div class="orbiter">
-    <button class="planet cherry" aria-label="CHERRY-11" onclick="showCherryPrompt()"></button>
-   </div>
-  </div>
- </div>
+  <div class="space" id="space">
+    <!-- Decorative solar-system video behind the planets -->
+    <video
+      class="space-bg-video"
+      id="solarVideo"
+      src="solar-system.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto">
+    </video>
 
- <div class="orbit-note" id="planetNote" aria-live="polite">
-  🌟 Every planet has a little message for you. Tap one!
- </div>
- <p class="space-hint">The pink planet on the outer orbit is CHERRY-11 🍒</p>
+    <div class="solar-stage" id="solarStage">
+      <div class="sun">☀️</div>
 
- <button class="btn" onclick="go('letterScreen')">Back to your letter 💌</button>
+      <div class="orbit" style="--r:8%;--speed:5s;">
+        <button class="planet mercury" aria-label="Mercury"
+          onclick="showPlanetMessage('mercury')">Me</button>
+      </div>
+
+      <div class="orbit" style="--r:14%;--speed:8s;">
+        <button class="planet venus" aria-label="Venus"
+          onclick="showPlanetMessage('venus')">V</button>
+      </div>
+
+      <div class="orbit" style="--r:20%;--speed:11s;">
+        <button class="planet earth" aria-label="Earth"
+          onclick="showPlanetMessage('earth')">E</button>
+      </div>
+
+      <div class="orbit" style="--r:26%;--speed:14s;">
+        <button class="planet mars" aria-label="Mars"
+          onclick="showPlanetMessage('mars')">M</button>
+      </div>
+
+      <div class="orbit" style="--r:32%;--speed:18s;">
+        <button class="planet jupiter" aria-label="Jupiter"
+          onclick="showPlanetMessage('jupiter')">J</button>
+      </div>
+
+      <div class="orbit" style="--r:38%;--speed:22s;">
+        <button class="planet saturn" aria-label="Saturn"
+          onclick="showPlanetMessage('saturn')">S</button>
+      </div>
+
+      <div class="orbit" style="--r:44%;--speed:27s;">
+        <button class="planet uranus" aria-label="Uranus"
+          onclick="showPlanetMessage('uranus')">U</button>
+      </div>
+
+      <div class="orbit" style="--r:49%;--speed:32s;">
+        <button class="planet neptune" aria-label="Neptune"
+          onclick="showPlanetMessage('neptune')">N</button>
+      </div>
+
+      <div class="orbit" style="--r:56%;--speed:38s;">
+        <button class="cherry" aria-label="CHERRY-11"
+          onclick="openCherryPrompt()">🍒<br>CHERRY-11</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- The message appears in the middle of the screen -->
+  <div class="planet-message" id="planetMessage" role="status"
+       aria-live="polite"></div>
+
+  <p class="cherry-prompt" id="cherryPrompt" style="display:none;">
+    You found CHERRY-11! 🍒💗<br>
+    Ready for your spaceship landing?
+  </p>
+
+  <button class="main-btn" id="explore-cherry"
+    style="display:none;" onclick="landOnCherry()">
+    🚀 Explore CHERRY-11
+  </button>
+
+  <p class="small-text" style="font-size:.8rem;margin-top:8px;">
+    Our universe has one very special planet…
+  </p>
 </section>
 
-<!-- CHERRY DISCOVERY POPUP -->
-<div id="cherryPrompt" role="dialog" aria-modal="true" aria-labelledby="cherryPromptTitle">
- <div class="prompt-card">
-  <div style="font-size:4rem">🍒🪐💗</div>
-  <h2 id="cherryPromptTitle">You found CHERRY-11!</h2>
-  <p>Not just another planet. This one was made especially for you, Bhawani. ✨</p>
-  <button class="btn" onclick="exploreCherry()">EXPLORE PLANET 🍒</button>
-  <br>
-  <button class="btn" onclick="closeCherryPrompt()" style="background:#49365b">Keep exploring 🌌</button>
- </div>
-</div>
+<!-- PAGE 5: CHERRY-11 / WATERFALL VIDEO -->
 
-<!-- CHERRY-11 WORLD -->
-<section class="screen" id="cherry">
- <p class="small">A WORLD THAT BELONGS IN YOUR DREAMS</p>
- <h1 class="cherry-title">Welcome to CHERRY-11 🍒</h1>
- <p>You've travelled across the universe and found your own little world. 💗</p>
+<section class="page" id="cherry-page">
+  <h1>Welcome to CHERRY-11 🍒</h1>
+  <h2 style="font-size:1.4rem;">You have officially landed! 🚀</h2>
 
- <div class="world">
-  <span class="butterfly b1">🦋</span>
-  <span class="butterfly b2">🦋</span>
-  <span class="butterfly b3">✨</span>
-  <div class="world-planet"></div>
-  <h2>Your own pink planet</h2>
-  <p>A dreamy place filled with stardust, soft pink skies, butterflies, and a little bit of magic.</p>
-  <button class="btn" onclick="worldMagic()">Make a wish ✨</button>
- </div>
+  <div class="video-frame">
+    <video
+      id="cherryVideo"
+      src="cherry-11.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto">
+    </video>
+  </div>
 
- <h2>Your magical planet in motion 💫</h2>
- <p>Look at your beautiful little world come alive.</p>
- <video class="video" controls autoplay muted loop playsinline preload="metadata">
-  <source src="cherry-11.mp4" type="video/mp4">
-  Your CHERRY-11 video could not be loaded.
- </video>
+  <p class="cherry-caption">
+    A magical little world made just for you.
+    May your life always be full of colour, wonder and beautiful dreams. ✨💗
+  </p>
 
- <h2>Your drawing universe 🎨</h2>
- <div class="drawing">👩‍🎨 🖼️ ✨</div>
- <p>Keep creating, keep dreaming, and keep sharing your beautiful art with the world.</p>
-
- <h2>Your cheering squad 📣</h2>
- <div class="names">
-  <span>Kunaji 👏</span><span>Kamal 👏</span>
-  <span>Hinode 👏</span><span>Shivam 👏</span>
-  <span>Eisha 👏</span><span>Icecream 👏</span>
-  <span>Isha 👏</span><span>Shriya 👏</span>
-  <span>Papibilli 👏</span><span>Himu 👏</span>
-  <span>Satvik 👏</span><span>Harsh 👏</span>
-  <span>Michii 👏</span>
- </div>
- <p>Your Litchi is cheering the loudest! 👏💗</p>
- <button class="btn" onclick="go('final')">One last surprise 💞</button>
+  <button class="main-btn" onclick="goTo('drawing-page')">
+    Enter the drawing universe 🎨
+  </button>
 </section>
 
-<!-- FINAL PAGE -->
-<section class="screen" id="final">
- <div class="card">
-  <div class="heart">💗💗💗</div>
+<!-- PAGE 6: DRAWING UNIVERSE -->
+
+<section class="page" id="drawing-page">
+  <h1>Your Drawing Universe 🎨</h1>
+
+  <div class="art-card">
+    <div class="art-emoji">🖌️ ✏️ 🖼️</div>
+    <h2>Keep creating, artist!</h2>
+    <p>
+      May every blank page become a new adventure, every sketch tell a story,
+      and every colour remind you how much magic you carry inside you.
+    </p>
+    <div class="art-emoji">🌷🎨🌟</div>
+  </div>
+
+  <button class="main-btn" onclick="goTo('cheering-page')">
+    Meet your cheering squad 🎉
+  </button>
+</section>
+
+<!-- PAGE 7: CHEERING SQUAD -->
+
+<section class="page" id="cheering-page">
+  <h1>Your Cheering Squad 🎉</h1>
+
+  <div class="cheer-emoji">🥳 🎂 🎊</div>
+
+  <h2>WE ARE CHEERING FOR YOU!</h2>
+
+  <p class="small-text">
+    For every dream you chase, every masterpiece you make,
+    every challenge you overcome, and every little victory you celebrate.
+    You deserve to be proud of yourself, Bhawani Babe! 💗
+  </p>
+
+  <div class="cheer-emoji">🍒💗✨</div>
+
+  <button class="main-btn" onclick="goTo('final-page')">
+    One last surprise 💌
+  </button>
+</section>
+
+<!-- PAGE 8: FINAL PAGE -->
+
+<section class="page" id="final-page">
+  <div class="final-hearts">🍒💗🎂💗🍒</div>
+
   <h1>Happy Birthday, Babe!</h1>
-  <p>May your days be full of laughter, beautiful art, genuine friends, and a thousand reminders of how loved you are.</p>
-  <h2>Did you like your birthday universe? 🥹</h2>
-  <button class="btn" onclick="yes()">YESSS 💗</button>
-  <button class="btn" id="no" onclick="nope()">NO 🙈</button>
-  <p id="answer" aria-live="polite"></p>
-  <button class="btn" onclick="replay()">Replay the surprise 🌸</button>
- </div>
+
+  <h2 style="font-size:1.4rem;">You deserve the whole universe. 🌌</h2>
+
+  <p class="final-message">
+    Keep smiling, keep creating, keep being YOU.
+    No planet, star or galaxy could ever replace the special place
+    you have in the hearts of the people who love you. 💗
+  </p>
+
+  <p style="color:#ffc4e7;">One question before you go…</p>
+
+  <h2 style="font-size:1.6rem;margin-top:10px;">
+    Will you keep being my favourite birthday girl? 🥹
+  </h2>
+
+  <div>
+    <button class="main-btn" onclick="finalYes()">YESSS 💗</button>
+    <button class="main-btn" onclick="finalNo()">NO 😭</button>
+  </div>
+
+  <p id="no-message">Hein ji?! 😭🍒 Please reconsider, birthday girl!</p>
+
+  <p id="yes-message" style="display:none;color:#ffc4e7;margin:15px;">
+    YAYYYY!! Sending you a whole universe of hugs, happiness and love! 🍒💗✨
+  </p>
+
+  <button class="main-btn" onclick="replayBirthday()">
+    Replay the surprise 🔁
+  </button>
+
+  <p style="color:#d9b9e8;font-size:.85rem;margin-top:20px;">
+    Made with love by Your Litchi 🍒
+  </p>
 </section>
 
 <script>
-const music=document.getElementById("birthdayMusic");
-const musicButton=document.getElementById("musicButton");
-const musicStatus=document.getElementById("musicStatus");
-let musicStarted=false;
+const pages = document.querySelectorAll(".page");
+const music = document.getElementById("birthdayMusic");
+const musicButton = document.getElementById("musicButton");
+const clappingVideo = document.getElementById("clappingVideo");
+const solarVideo = document.getElementById("solarVideo");
+const cherryVideo = document.getElementById("cherryVideo");
 
-const messages={
- Mercury:"☀️ You are as hot as me.",
- Venus:"😭 You are as short-tempered as me (maaf kardijiyeee malkin).",
- Earth:"🌍 You mean the world to Litchi.",
- Mars:"😳 You turn as red as me when Litchi flirts with you.",
- Jupiter:"💗 Your heart is as big as me.",
- Saturn:"💍 You are more beautiful than my rings.",
- Uranus:"🧪 You are bromine without bro.",
- Neptune:"❄️ You are as cool as me."
+let musicStarted = false;
+let messageTimer = null;
+let landingInProgress = false;
+
+/* CHANGE BETWEEN PAGES */
+
+function goTo(pageId) {
+  pages.forEach(page => page.classList.remove("active"));
+
+  const nextPage = document.getElementById(pageId);
+  nextPage.classList.add("active");
+
+  window.scrollTo({ top: 0, behavior: "instant" });
+
+  if (pageId === "cake-page") {
+    playVideo(clappingVideo);
+  }
+
+  if (pageId === "solar-page") {
+    playVideo(solarVideo);
+    hidePlanetMessage();
+    document.getElementById("cherryPrompt").style.display = "none";
+    document.getElementById("explore-cherry").style.display = "none";
+    document.getElementById("space").classList.remove("zooming");
+  }
+
+  if (pageId === "cherry-page") {
+    playVideo(cherryVideo);
+  }
+}
+
+/* VIDEO PLAYBACK
+   Videos are muted so mobile browsers can autoplay them. */
+
+function playVideo(video) {
+  if (!video) return;
+
+  video.muted = true;
+  video.playsInline = true;
+
+  const attemptPlay = () => {
+    const result = video.play();
+    if (result && typeof result.catch === "function") {
+      result.catch(() => {
+        // Retry when the page becomes visible or the user interacts.
+      });
+    }
+  };
+
+  if (video.readyState >= 2) {
+    attemptPlay();
+  } else {
+    video.addEventListener("canplay", attemptPlay, { once: true });
+    video.load();
+  }
+}
+
+/* MUSIC */
+
+function startMusic() {
+  if (musicStarted) return;
+
+  music.volume = 0.7;
+
+  const result = music.play();
+
+  if (result && typeof result.then === "function") {
+    result.then(() => {
+      musicStarted = true;
+      musicButton.textContent = "🎵 Music: ON";
+    }).catch(() => {
+      musicButton.textContent = "🎵 Tap for music";
+    });
+  }
+}
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play().then(() => {
+      musicStarted = true;
+      musicButton.textContent = "🎵 Music: ON";
+    }).catch(() => {
+      musicButton.textContent = "🎵 Music unavailable";
+    });
+  } else {
+    music.pause();
+    musicButton.textContent = "🎵 Music: OFF";
+  }
+}
+
+/* START THE BIRTHDAY */
+
+function startBirthday() {
+  startMusic();
+  goTo("cake-page");
+  playVideo(clappingVideo);
+}
+
+/* PLANET MESSAGES: SHOW FOR 3.5 SECONDS */
+
+const planetMessages = {
+  mercury: "☀️ You are as hot as me.",
+  venus: "😂 You have as small mind as me (hehe roast maaf kariye malkin).",
+  earth: "🌍 You mean the world to Litchi.",
+  mars: "😳 You turn as red as me when Litchi flirts with you haha.",
+  jupiter: "💗 Your heart is as big as me.",
+  saturn: "💍 You have your unique identity as my rings.",
+  uranus: "🧪 You aree bromine without bro.",
+  neptune: "❄️ You are as cool as me."
 };
 
-function updateMusicButton(){
- if(music.paused){
-  musicButton.textContent="🎵";
-  musicStatus.textContent="MUSIC OFF";
- }else{
-  musicButton.textContent="🔊";
-  musicStatus.textContent="NOW PLAYING";
- }
+function showPlanetMessage(planet) {
+  const box = document.getElementById("planetMessage");
+  const prompt = document.getElementById("cherryPrompt");
+  const explore = document.getElementById("explore-cherry");
+
+  if (!planetMessages[planet]) return;
+
+  clearTimeout(messageTimer);
+
+  box.textContent = planetMessages[planet];
+  box.classList.add("show");
+
+  prompt.style.display = "none";
+  explore.style.display = "none";
+
+  messageTimer = setTimeout(() => {
+    box.classList.remove("show");
+  }, 3500);
 }
 
-function startMusic(){
- if(musicStarted && !music.paused)return;
- music.play().then(()=>{
-  musicStarted=true;
-  updateMusicButton();
- }).catch(()=>{
-  musicStatus.textContent="TAP 🎵 FOR MUSIC";
-  musicButton.textContent="🎵";
- });
+function hidePlanetMessage() {
+  clearTimeout(messageTimer);
+  document.getElementById("planetMessage").classList.remove("show");
 }
 
-function toggleMusic(){
- if(music.paused){
-  music.play().then(()=>{
-   musicStarted=true;
-   updateMusicButton();
-  }).catch(()=>{
-   musicStatus.textContent="TRY AGAIN 🎵";
-  });
- }else{
-  music.pause();
-  updateMusicButton();
- }
+/* CHERRY-11 PROMPT */
+
+function openCherryPrompt() {
+  hidePlanetMessage();
+
+  document.getElementById("cherryPrompt").style.display = "block";
+  document.getElementById("explore-cherry").style.display = "inline-block";
 }
 
-function go(id){
- document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
- document.getElementById("cherryPrompt").classList.remove("show");
- const target=document.getElementById(id);
- if(target)target.classList.add("active");
- window.scrollTo({top:0,behavior:"smooth"});
+/* SPACESHIP LANDING TRANSITION */
+
+function landOnCherry() {
+  if (landingInProgress) return;
+  landingInProgress = true;
+
+  hidePlanetMessage();
+
+  const space = document.getElementById("space");
+  const flash = document.getElementById("landing-flash");
+  const exploreButton = document.getElementById("explore-cherry");
+
+  exploreButton.disabled = true;
+  exploreButton.textContent = "🚀 Landing on CHERRY-11...";
+
+  // Zoom into the glowing planet, then trigger a bright landing flash.
+  space.classList.add("zooming");
+  flash.classList.remove("flash");
+
+  // Restart the flash animation each time.
+  void flash.offsetWidth;
+  flash.classList.add("flash");
+
+  // Switch pages as the flash reaches its brightest point.
+  setTimeout(() => {
+    goTo("cherry-page");
+    playVideo(cherryVideo);
+  }, 1050);
+
+  // Clean up the effect after the transition.
+  setTimeout(() => {
+    flash.classList.remove("flash");
+    space.classList.remove("zooming");
+    exploreButton.disabled = false;
+    exploreButton.textContent = "🚀 Explore CHERRY-11";
+    landingInProgress = false;
+  }, 1700);
 }
 
-function start(){
- startMusic();
- go("cake");
- roses(18);
+/* FINAL PAGE BUTTONS */
+
+function finalYes() {
+  document.getElementById("yes-message").style.display = "block";
+  document.getElementById("no-message").style.display = "none";
 }
 
-function blow(){
- document.getElementById("cakeWords").textContent=
- "Wish made! May all your dreams come true! 💗";
- document.getElementById("claps").style.display="block";
- roses(30);
- hearts(15);
+function finalNo() {
+  document.getElementById("no-message").style.display = "block";
+  document.getElementById("yes-message").style.display = "none";
 }
 
-function openLetter(){
- document.getElementById("envelope").classList.add("open");
- document.getElementById("letter").style.display="block";
- roses(45);
- hearts(18);
- setTimeout(()=>{
-  document.getElementById("letter").scrollIntoView({
-   behavior:"smooth",block:"start"
-  });
- },150);
+/* REPLAY */
+
+function replayBirthday() {
+  hidePlanetMessage();
+
+  document.getElementById("cherryPrompt").style.display = "none";
+  document.getElementById("explore-cherry").style.display = "none";
+  document.getElementById("yes-message").style.display = "none";
+  document.getElementById("no-message").style.display = "none";
+
+  document.getElementById("space").classList.remove("zooming");
+
+  goTo("welcome");
 }
 
-function planetTap(name){
- const note=document.getElementById("planetNote");
- note.textContent=name+" says: "+messages[name];
- note.animate(
-  [{opacity:.3,transform:"scale(.96)"},{opacity:1,transform:"scale(1)"}],
-  {duration:350}
- );
- hearts(3);
-}
+/* RETRY AUTOPLAY WHEN THE PHONE RETURNS TO THE PAGE */
 
-function showCherryPrompt(){
- document.getElementById("cherryPrompt").classList.add("show");
-}
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) return;
 
-function closeCherryPrompt(){
- document.getElementById("cherryPrompt").classList.remove("show");
-}
+  const currentPage = document.querySelector(".page.active");
 
-function exploreCherry(){
- closeCherryPrompt();
- const space=document.getElementById("space");
- const flash=document.getElementById("flash");
- space.classList.add("zooming");
- flash.classList.remove("on");
- void flash.offsetWidth;
- flash.classList.add("on");
+  if (!currentPage) return;
 
- setTimeout(()=>{
-  space.classList.remove("zooming");
-  go("cherry");
-  window.scrollTo(0,0);
- },1250);
-}
+  if (currentPage.id === "cake-page") playVideo(clappingVideo);
+  if (currentPage.id === "solar-page") playVideo(solarVideo);
+  if (currentPage.id === "cherry-page") playVideo(cherryVideo);
+});
 
-function worldMagic(){
- roses(30);
- hearts(18);
- const world=document.querySelector(".world");
- world.animate(
-  [{filter:"brightness(1)"},{filter:"brightness(1.7)"},{filter:"brightness(1)"}],
-  {duration:1100}
- );
-}
+/* MAKE SURE THE CURRENT VIDEO STARTS WHEN ITS PAGE OPENS */
 
-function roses(n){
- const holder=document.getElementById("rain");
- for(let i=0;i<n;i++){
-  const el=document.createElement("span");
-  el.className="rose";
-  el.textContent=["🌹","🌸","🌷","💮"][Math.floor(Math.random()*4)];
-  el.style.left=Math.random()*100+"vw";
-  el.style.setProperty("--drift",(Math.random()*180-90)+"px");
-  el.style.animationDuration=(3+Math.random()*4)+"s";
-  el.style.fontSize=(18+Math.random()*20)+"px";
-  holder.appendChild(el);
-  setTimeout(()=>el.remove(),8000);
- }
-}
+window.addEventListener("pageshow", () => {
+  const currentPage = document.querySelector(".page.active");
 
-function hearts(n){
- const holder=document.getElementById("rain");
- for(let i=0;i<n;i++){
-  const el=document.createElement("span");
-  el.className="rising-heart";
-  el.textContent=["💗","💖","💕","❤️","✨"][Math.floor(Math.random()*5)];
-  el.style.left=Math.random()*100+"vw";
-  el.style.setProperty("--drift",(Math.random()*120-60)+"px");
-  el.style.animationDuration=(3+Math.random()*3)+"s";
-  el.style.fontSize=(20+Math.random()*20)+"px";
-  holder.appendChild(el);
-  setTimeout(()=>el.remove(),7000);
- }
-}
-
-function yes(){
- document.getElementById("answer").textContent=
- "I KNEW ITTT! 😭💗 Happy birthday, my favourite artist!";
- hearts(35);
- roses(25);
-}
-
-function nope(){
- document.getElementById("answer").textContent=
- "No is not accepted today hehe 😭💗 Try YESSS!";
- const b=document.getElementById("no");
- b.style.transform="translate("+(Math.random()*100-50)+"px,"+
- (Math.random()*50-25)+"px)";
-}
-
-function replay(){
- document.getElementById("no").style.transform="";
- document.getElementById("answer").textContent="";
- document.getElementById("letter").style.display="none";
- document.getElementById("envelope").classList.remove("open");
- document.getElementById("claps").style.display="none";
- document.getElementById("cakeWords").textContent=
- "Close your eyes and make a wish.";
- document.getElementById("planetNote").textContent=
- "🌟 Every planet has a little message for you. Tap one!";
- document.getElementById("space").classList.remove("zooming");
- go("welcome");
- startMusic();
-}
+  if (currentPage && currentPage.id === "cake-page") {
+    playVideo(clappingVideo);
+  }
+});
 </script>
+
 </body>
 </html>
