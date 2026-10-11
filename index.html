@@ -202,41 +202,81 @@
 
   <div class="party hidden" id="party"></div>
 
-  <script>
-    function startParty() {
-      const party = document.getElementById("party");
-      const invitation = document.getElementById("invitation");
+  
+<script>
+function startParty() {
+  const party = document.getElementById("party");
+  const invitation = document.getElementById("invitation");
 
-      invitation.classList.add("hidden");
-      party.classList.remove("hidden");
+  invitation.classList.add("hidden");
+  party.classList.remove("hidden");
+  party.innerHTML = "";
 
-      const symbols = [
-        "🎉", "🎊", "🎈", "💗",
-        "🌸", "✨", "🍒", "💕"
-      ];
+  const symbols = [
+    "🎉", "🎊", "🎈", "💗", "🌸",
+    "✨", "🍒", "💕", "🎈", "🎉"
+  ];
 
-      for (let i = 0; i < 100; i++) {
-        const piece = document.createElement("div");
-        piece.className = "confetti";
-        piece.textContent =
-          symbols[Math.floor(Math.random() * symbols.length)];
+  for (let i = 0; i < 140; i++) {
+    const piece = document.createElement("div");
+    piece.className = "confetti";
+    piece.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+    piece.style.left = Math.random() * 100 + "%";
+    piece.style.fontSize = (20 + Math.random() * 28) + "px";
+    piece.style.animationDuration = (3 + Math.random() * 4) + "s";
+    piece.style.animationDelay = Math.random() * 1.5 + "s";
+    party.appendChild(piece);
+  }
 
-        piece.style.left = Math.random() * 100 + "%";
-        piece.style.fontSize = (18 + Math.random() * 25) + "px";
-        piece.style.animationDuration = (2 + Math.random() * 4) + "s";
-        piece.style.animationDelay = Math.random() * 2 + "s";
+  const message = document.createElement("div");
+  message.className = "party-message";
+  message.innerHTML =
+    "HAPPY BIRTHDAY<br>MY CHERRY! 🍒🌸<br>" +
+    "<span style='font-size:24px'>YOUR MAGIC STARTS NOW!</span>";
+  party.appendChild(message);
 
-        party.appendChild(piece);
-      }
+  setTimeout(() => {
+    party.innerHTML = "";
 
-      const message = document.createElement("div");
-      message.className = "party-message";
-      message.innerHTML =
-        "HAPPY BIRTHDAY<br>MY CHERRY! 🍒🌸<br>🎂💗";
+    const cake = document.createElement("div");
+    cake.style.cssText = `
+      position:absolute; inset:0; overflow:auto;
+      display:flex; align-items:center; justify-content:center;
+      padding:20px; text-align:center;
+      background:radial-gradient(circle,#713c75,#24112f 70%,#100c20);
+    `;
 
-      party.appendChild(message);
-    }
-  </script>
+    cake.innerHTML = `
+      <div style="max-width:400px;padding:25px 15px">
+        <div style="font-size:42px">🌸 🎂 🌸</div>
+        <h1 style="color:#ffd1ed">A Cake for Cherry!</h1>
+        <div style="font-size:65px">🧑🏻‍🍳 🎂 🧑🏻‍🍳</div>
+        <p>Your special cake has arrived, Bhawani! 💗</p>
+        <p>Close your eyes, make a wish, and blow your candles!</p>
+        <button id="blow" style="
+          padding:14px 22px;border:0;border-radius:30px;
+          background:#ffaddb;color:#351333;font-weight:bold">
+          Blow Your Candles! 🕯️
+        </button>
+        <div id="cheer" style="font-size:20px;margin-top:20px"></div>
+      </div>
+    `;
+
+    party.appendChild(cake);
+
+    document.getElementById("blow").onclick = function() {
+      document.getElementById("cheer").innerHTML =
+        "🎂 Candles out! 💨<br><br>👏🏻 👏🏻 👏🏻<br>" +
+        "HAPPY BIRTHDAY, CHERRY! 🍒🌸<br>" +
+        "Your Litchi is cheering the loudest! 💗";
+      this.textContent = "Wish Granted! ✨";
+      this.disabled = true;
+    };
+  }, 5500);
+}
+</script>
+
 </body>
 </html>
 
