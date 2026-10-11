@@ -1,357 +1,1024 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cherry's Birthday Universe 🌸</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Cherry 🍒</title>
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      overflow: hidden;
-      font-family: Georgia, serif;
-      color: white;
-      background: radial-gradient(
-        circle at top,
-        #60345f,
-        #251331 55%,
-        #100c20
-      );
-    }
+<style>
+* { box-sizing: border-box; }
 
-    .stars {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        radial-gradient(white 1px, transparent 1.5px),
-        radial-gradient(#ffc5e5 1px, transparent 1.5px);
-      background-size: 47px 47px, 73px 73px;
-      background-position: 0 0, 20px 30px;
-      animation: twinkle 4s ease-in-out infinite alternate;
-    }
+:root {
+  --pink: #ffb8e6;
+  --deep: #100b24;
+  --purple: #633b91;
+}
 
-    @keyframes twinkle {
-      from { opacity: .35; }
-      to { opacity: 1; }
-    }
+body {
+  margin: 0;
+  background: var(--deep);
+  color: white;
+  font-family: Georgia, serif;
+  overflow: hidden;
+}
 
-    .screen {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      padding: 28px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+button {
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
 
-    .invitation {
-      width: 100%;
-      max-width: 430px;
-      padding: 35px 22px;
-      border: 1px solid rgba(255, 208, 238, .65);
-      border-radius: 28px;
-      background: rgba(255, 255, 255, .07);
-      box-shadow: 0 0 45px #ff78ce24;
-      backdrop-filter: blur(8px);
-      animation: float 4s ease-in-out infinite;
-    }
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 4px;
+}
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+.page {
+  position: fixed;
+  inset: 0;
+  display: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  padding: 25px 16px;
+  background:
+    radial-gradient(ellipse at 50% 0%, #613a85 0%, #241338 45%, #090817 100%);
+  animation: appear 1s ease both;
+}
 
-    .flower {
-      font-size: 40px;
-      margin-bottom: 8px;
-    }
+.page.active { display: block; }
 
-    .eyebrow {
-      color: #ffd2ee;
-      letter-spacing: 4px;
-      font-size: 11px;
-      text-transform: uppercase;
-    }
+.center-page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    h1 {
-      color: #ffd1ed;
-      font-size: clamp(35px, 10vw, 53px);
-      margin: 18px 0 12px;
-      text-shadow: 0 0 25px #ff80d3a0;
-    }
+@keyframes appear {
+  from { opacity: 0; transform: scale(.98); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-    p {
-      line-height: 1.8;
-      color: #f8e5f5;
-      font-size: 16px;
-    }
+h1, h2 { color: var(--pink); }
 
-    .button {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 15px 24px;
-      border: 0;
-      border-radius: 50px;
-      background: linear-gradient(120deg, #ffaddb, #e9aaff);
-      color: #351333;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 25px #ff9fdf55;
-      animation: glow 2s infinite alternate;
-    }
+.glow {
+  text-shadow: 0 0 8px #ff8ed8, 0 0 22px #ff54bf,
+               0 0 42px #a94fff;
+}
 
-    @keyframes glow {
-      to { box-shadow: 0 0 32px #ff9fdfaa; }
-    }
+.main-title {
+  font-size: clamp(36px, 9vw, 65px);
+  margin: 16px 0;
+}
 
-    .hidden {
-      display: none !important;
-    }
+.subtitle {
+  max-width: 520px;
+  line-height: 1.8;
+  color: #f9def6;
+}
 
-    .party {
-      position: fixed;
-      inset: 0;
-      z-index: 5;
-      overflow: hidden;
-      pointer-events: auto;
-    }
+.pretty-button {
+  margin: 12px;
+  border: 1px solid #ffe3fa;
+  border-radius: 40px;
+  padding: 15px 25px;
+  color: #391541;
+  font-size: 17px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ffe0f4, #ff9ed8);
+  box-shadow: 0 0 24px #f45dc966;
+  transition: transform .25s, box-shadow .25s;
+}
 
-    .confetti {
-      position: absolute;
-      top: -30px;
-      animation: fall linear forwards;
-    }
+.pretty-button:active {
+  transform: scale(.94);
+}
 
-    @keyframes fall {
-      to {
-        transform: translateY(115vh) rotate(800deg);
-      }
-    }
+.pretty-button:hover {
+  box-shadow: 0 0 32px #ff8bdd;
+}
 
-    .party-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 90%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      font-size: clamp(30px, 9vw, 55px);
-      font-weight: bold;
-      color: #ffe0f5;
-      text-shadow: 0 0 30px #ff4cbe;
-      animation: pop .7s ease-out both;
-    }
+/* Stars */
+#stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
 
-    @keyframes pop {
-      from {
-        opacity: 0;
-        scale: .3;
-      }
-      to {
-        opacity: 1;
-        scale: 1;
-      }
-    }
+.star {
+  position: absolute;
+  color: white;
+  animation: twinkle var(--duration) ease-in-out infinite alternate;
+}
 
-    .hint {
-      font-size: 12px;
-      color: #d9bbd8;
-      margin-top: 20px;
-    }
-  </style>
+@keyframes twinkle {
+  from { opacity: .2; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+/* Invitation */
+.moon {
+  font-size: 70px;
+  filter: drop-shadow(0 0 22px #ffe4ff);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-13px); }
+}
+
+/* Cake */
+.cake-scene {
+  width: min(100%, 470px);
+  margin: 0 auto;
+  padding: 20px 10px 35px;
+}
+
+.character-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px auto;
+}
+
+.character {
+  position: relative;
+  width: 30%;
+  min-width: 85px;
+  padding: 10px 4px;
+  border: 1px solid #ffbce8;
+  border-radius: 18px;
+  background: #ffffff0c;
+  box-shadow: 0 0 15px #d55cba33;
+}
+
+.character .avatar {
+  font-size: 46px;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.character:nth-child(2) .avatar { animation-delay: .5s; }
+.character:nth-child(3) .avatar { animation-delay: 1s; }
+
+.character img {
+  display: none;
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.character small {
+  display: block;
+  margin-top: 7px;
+  color: #ffd4f1;
+}
+
+.cake {
+  position: relative;
+  width: 185px;
+  height: 115px;
+  margin: 45px auto 15px;
+  animation: cakeFloat 3s ease-in-out infinite;
+}
+
+@keyframes cakeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.cake-top {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 165px;
+  height: 45px;
+  border-radius: 50%;
+  background: #ffd4ee;
+  border: 3px solid #fff0fc;
+  z-index: 2;
+}
+
+.cake-body {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  width: 165px;
+  height: 78px;
+  border-radius: 0 0 22px 22px;
+  background: linear-gradient(90deg, #d64e9d, #ffabd9, #c94392);
+  border-bottom: 8px solid #ffdbf0;
+}
+
+.cake-body::after {
+  content: "♥ ♥ ♥";
+  color: white;
+  font-size: 23px;
+  position: absolute;
+  inset: 30px 0 auto;
+}
+
+.candle {
+  position: absolute;
+  width: 9px;
+  height: 42px;
+  bottom: 85px;
+  background: repeating-linear-gradient(
+    45deg, #fff 0 5px, #ff68c5 5px 10px
+  );
+  border-radius: 4px;
+  z-index: 3;
+}
+
+.candle:nth-child(1) { left: 45px; }
+.candle:nth-child(2) { left: 88px; }
+.candle:nth-child(3) { left: 131px; }
+
+.flame {
+  position: absolute;
+  width: 13px;
+  height: 20px;
+  top: -17px;
+  left: -2px;
+  background: #fff49c;
+  border-radius: 70% 30% 65% 35%;
+  box-shadow: 0 0 18px #ffbd52;
+  animation: flicker .4s infinite alternate;
+}
+
+@keyframes flicker {
+  to { transform: scale(.8) rotate(8deg); opacity: .7; }
+}
+
+#clap {
+  font-size: 35px;
+  min-height: 48px;
+  margin: 15px 0;
+}
+
+.clapping {
+  animation: clap .25s infinite alternate;
+}
+
+@keyframes clap {
+  from { transform: rotate(-7deg) scale(.94); }
+  to { transform: rotate(7deg) scale(1.08); }
+}
+
+/* Letter */
+.letter {
+  position: relative;
+  width: min(100%, 650px);
+  margin: 25px auto;
+  padding: clamp(22px, 6vw, 42px);
+  border: 1px solid #ffc6e9;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #fff1f8, #f9d9ee);
+  color: #502443;
+  box-shadow: 0 0 40px #ff70ce40;
+  text-align: left;
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.letter h1 {
+  text-align: center;
+  color: #b42a86;
+  font-size: clamp(32px, 8vw, 47px);
+  text-shadow: 0 0 10px #ff9de1;
+  animation: letterGlow 2s infinite alternate;
+}
+
+@keyframes letterGlow {
+  to { text-shadow: 0 0 18px #ff6cc8, 0 0 30px #f2a8ff; }
+}
+
+.petals, .hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.petal, .heart {
+  position: absolute;
+  top: -40px;
+  animation: fall linear forwards;
+  will-change: transform;
+}
+
+.petal {
+  filter: drop-shadow(0 0 5px #ff9cda);
+}
+
+@keyframes fall {
+  to { transform: translate3d(var(--drift), 115vh, 0) rotate(720deg); }
+}
+
+/* Solar system */
+.space-intro { max-width: 550px; margin: 0 auto; line-height: 1.7; }
+
+.solar-system {
+  position: relative;
+  width: min(94vw, 500px);
+  height: min(94vw, 500px);
+  max-height: 500px;
+  margin: 25px auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff08, transparent 70%);
+}
+
+.sun {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff9b4, #ff9a37 60%, #ff512f);
+  box-shadow: 0 0 25px #ffae37, 0 0 60px #ff712c;
+  z-index: 3;
+}
+
+.orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid #ffffff32;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbitSpin var(--speed) linear infinite;
+}
+
+@keyframes orbitSpin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.planet {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: var(--size);
+  height: var(--size);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  font-size: calc(var(--size) * .72);
+  line-height: 1;
+  background: transparent;
+  filter: drop-shadow(0 0 7px #ffffff77);
+  animation: planetCounterSpin var(--speed) linear infinite;
+}
+
+@keyframes planetCounterSpin {
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+.planet:active { filter: drop-shadow(0 0 18px white); }
+
+.planet-note {
+  width: min(100%, 500px);
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #f7b5e8;
+  border-radius: 20px;
+  background: #ffffff10;
+  line-height: 1.8;
+  min-height: 85px;
+}
+
+.zoom-panel {
+  display: none;
+  width: min(100%, 500px);
+  margin: 15px auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: #120b2cee;
+  border: 1px solid #ffb9e7;
+  box-shadow: 0 0 30px #ff85d944;
+}
+
+/* Cherry-11 */
+#cherryPage {
+  background:
+    radial-gradient(ellipse at 50% 20%, #397c8a 0%, #19384b 35%, #100d29 85%);
+}
+
+.garden {
+  position: relative;
+  width: min(100%, 700px);
+  min-height: 400px;
+  margin: 20px auto;
+  padding: 22px 12px;
+  overflow: hidden;
+  border: 1px solid #b7f8ff66;
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 50% 100%, #1dbaac88, transparent 55%),
+    radial-gradient(ellipse at 15% 80%, #5dcf8c55, transparent 45%),
+    linear-gradient(#202f64, #215a62 70%, #173d42);
+  transition: filter 1.5s, box-shadow 1.5s;
+}
+
+.garden.magic {
+  filter: brightness(1.7) saturate(1.3);
+  box-shadow: 0 0 55px #a2fff9aa, inset 0 0 60px #ffe8ff77;
+}
+
+.waterfall {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12%;
+  width: 15px;
+  opacity: .6;
+  background: linear-gradient(transparent, #b7ffff, #54e6ff, transparent);
+  filter: blur(3px);
+  animation: water 2s linear infinite;
+}
+
+.waterfall.two {
+  left: auto;
+  right: 12%;
+  width: 10px;
+  animation-delay: -1s;
+}
+
+@keyframes water {
+  from { background-position: 0 -100px; }
+  to { background-position: 0 200px; }
+}
+
+.garden-scene {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(25px, 6vw, 42px);
+  line-height: 1.6;
+  text-shadow: 0 0 14px #b2ffff55;
+}
+
+.artist {
+  display: inline-block;
+  font-size: 70px;
+  animation: draw 3s ease-in-out infinite;
+}
+
+@keyframes draw {
+  0%, 100% { transform: rotate(-5deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-8px); }
+}
+
+.subscribers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  max-width: 650px;
+  margin: 20px auto;
+}
+
+.subscriber {
+  padding: 9px 12px;
+  border: 1px solid #c2f7ff77;
+  border-radius: 22px;
+  background: #ffffff12;
+  animation: float 3s ease-in-out infinite;
+}
+
+.subscriber:nth-child(even) { animation-delay: .8s; }
+
+.tap-hint { color: #e6dfff; font-size: 14px; }
+
+/* Final */
+.final-title {
+  font-size: clamp(35px, 9vw, 62px);
+  line-height: 1.25;
+}
+
+#noButton {
+  position: relative;
+  transition: left .15s, top .15s;
+}
+
+.ending { padding-bottom: 70px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 10s !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
 </head>
+
 <body>
-  <div class="stars"></div>
 
-  <main class="screen">
-    <section class="invitation" id="invitation">
-      <div class="flower">🌸 🍒 🌸</div>
-      <div class="eyebrow">A special invitation</div>
+<div id="stars"></div>
+<div id="petals" class="petals"></div>
+<div id="hearts" class="hearts"></div>
 
-      <h1>Cherry's<br>Birthday</h1>
+<!-- PAGE 1: INVITATION -->
+<section id="invitation" class="page active">
+  <div class="center-page">
+    <div class="moon">🌙</div>
+    <p>✦ A little universe made just for you ✦</p>
+    <h1 class="main-title glow">Happy Birthday,<br>My Cherry! 🍒</h1>
+    <p class="subtitle">
+      Somewhere between the stars and all the magic in the universe,
+      there is a little surprise waiting for you.
+    </p>
+    <p style="font-size:22px;color:#ffd2f1">
+      Are you ready, Bhawani Babe? 🌸
+    </p>
+    <button class="pretty-button" onclick="startParty()">
+      Enter Your Birthday Universe ✨
+    </button>
+    <p style="font-size:13px;color:#c9b5dc">Made with love by your Litchi 💗</p>
+  </div>
+</section>
+
+<!-- PAGE 2: CAKE -->
+<section id="cakePage" class="page">
+  <div class="cake-scene">
+    <p>🎉 SURPRISE, CHERRY! 🎉</p>
+    <h1 class="glow">A Cake for You!</h1>
+    <p class="subtitle">
+      Your special birthday delivery has arrived!
+    </p>
+
+    <div class="character-row">
+      <div class="character">
+        <span class="avatar">🧑🏻‍🍳</span>
+        <small>Garrett</small>
+      </div>
+      <div class="character">
+        <span class="avatar">🧑🏽‍🍳</span>
+        <small>Dean</small>
+      </div>
+      <div class="character">
+        <span class="avatar">🧑🏼‍🍳</span>
+        <small>Your friend</small>
+      </div>
+    </div>
+
+    <p>They made this cake especially for you! 🎂</p>
+
+    <div class="cake" aria-label="Birthday cake with three candles">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="cake-top"></div>
+      <div class="cake-body"></div>
+    </div>
+
+    <p id="cakePrompt" class="subtitle">
+      Close your eyes, make a wish, and blow your candles! 🕯️
+    </p>
+
+    <button id="blowButton" class="pretty-button" onclick="blowCandles()">
+      Blow Your Candles! 💨
+    </button>
+
+    <div id="clap"></div>
+    <div id="cakeNext"></div>
+  </div>
+</section>
+
+<!-- PAGE 3: LETTER -->
+<section id="letterPage" class="page">
+  <div class="center-page">
+    <p>🌸 A little something from my heart 🌸</p>
+
+    <div class="letter">
+      <h1>Dear Bhawani Babe ❤️🌸</h1>
 
       <p>
-        Dear Bhawani,<br>
-        Your Litchi has planned a little
-        universe just for you.
+        You are one of the best friends that I have ever got.
+        Today is a precious day, and I hope you enjoy every day
+        filled with laughter and enjoyment.
       </p>
 
       <p>
-        A magical celebration awaits you,
-        my Cherry. 💗
+        I know these 4–5 months were really difficult for you.
+        But whenever you look back, <b>Eisha aapke piche nhi,
+        aapke saath khadi hogi.</b> Dosti end tak nibhane ki
+        koshish karungi. I will be there whenever you need me.
       </p>
 
-      <button class="button" onclick="startParty()">
-        Enter Your Birthday Universe ✨
+      <p>
+        A great artist, a great daughter, a great friend, and what
+        not!! You deserve the world. May God bless you.
+      </p>
+
+      <p style="text-align:center;font-size:22px">
+        Love you so much, babe... 🌸❤️
+      </p>
+
+      <p style="text-align:right;margin-bottom:0">
+        Forever your Litchi 🍒
+      </p>
+    </div>
+
+    <button class="pretty-button" onclick="openSpace()">
+      Continue to Our Galaxy 🚀
+    </button>
+  </div>
+</section>
+
+<!-- PAGE 4: SOLAR SYSTEM -->
+<section id="spacePage" class="page">
+  <h1 class="glow">Cherry's Cosmic Journey 🌌</h1>
+  <p class="space-intro">
+    Welcome to your own universe, Cherry.
+    Tap a planet to discover a message from your Litchi.
+    Your planets are waiting for you! ✨
+  </p>
+
+  <div class="solar-system">
+    <div class="sun" title="The Sun"></div>
+
+    <div class="orbit" style="width:75px;height:75px;--speed:5s">
+      <button class="planet" style="--size:13px;--speed:5s"
+        onclick="planetMessage('Mercury')" aria-label="Mercury">🌑</button>
+    </div>
+
+    <div class="orbit" style="width:115px;height:115px;--speed:8s">
+      <button class="planet" style="--size:19px;--speed:8s"
+        onclick="planetMessage('Venus')" aria-label="Venus">🟠</button>
+    </div>
+
+    <div class="orbit" style="width:160px;height:160px;--speed:11s">
+      <button class="planet" style="--size:24px;--speed:11s"
+        onclick="planetMessage('Earth')" aria-label="Earth">🌍</button>
+    </div>
+
+    <div class="orbit" style="width:205px;height:205px;--speed:15s">
+      <button class="planet" style="--size:20px;--speed:15s"
+        onclick="planetMessage('Mars')" aria-label="Mars">🔴</button>
+    </div>
+
+    <div class="orbit" style="width:260px;height:260px;--speed:20s">
+      <button class="planet" style="--size:31px;--speed:20s"
+        onclick="planetMessage('Jupiter')" aria-label="Jupiter">🟤</button>
+    </div>
+
+    <div class="orbit" style="width:320px;height:320px;--speed:26s">
+      <button class="planet" style="--size:32px;--speed:26s"
+        onclick="planetMessage('Saturn')" aria-label="Saturn">🪐</button>
+    </div>
+
+    <div class="orbit" style="width:380px;height:380px;--speed:32s">
+      <button class="planet" style="--size:23px;--speed:32s"
+        onclick="planetMessage('Uranus')" aria-label="Uranus">🔵</button>
+    </div>
+
+    <div class="orbit" style="width:440px;height:440px;--speed:39s">
+      <button class="planet" style="--size:23px;--speed:39s"
+        onclick="planetMessage('Neptune')" aria-label="Neptune">🔷</button>
+    </div>
+  </div>
+
+  <div id="planetNote" class="planet-note">
+    ✨ Tap any planet to reveal your birthday message! ✨
+  </div>
+
+  <div id="planetZoom" class="zoom-panel">
+    <h2 id="zoomTitle"></h2>
+    <p id="zoomText"></p>
+    <button class="pretty-button" onclick="closePlanet()">
+      Back to the Galaxy 🌌
+    </button>
+  </div>
+
+  <button class="pretty-button" onclick="visitCherry()">
+    Discover Planet CHERRY-11 🍒
+  </button>
+</section>
+
+<!-- PAGE 5: CHERRY-11 -->
+<section id="cherryPage" class="page">
+  <h1 class="glow">Welcome to CHERRY-11 🍒</h1>
+  <p class="space-intro">
+    A planet that exists for one extraordinary girl:
+    an artist, a dreamer, and a heart full of magic.
+  </p>
+
+  <div id="garden" class="garden" onclick="awakenMagic()">
+    <div class="waterfall"></div>
+    <div class="waterfall two"></div>
+
+    <div class="garden-scene">
+      <div>✨ 🌌 ✨</div>
+      <div>🦋 🦋 🦋</div>
+      <div>🌳 🌸 🌳 🌷 🌳</div>
+      <div class="artist">👩🏻‍🎨🎨</div>
+      <div>🌺 🌿 🌼 🌿 🌺</div>
+      <div>💧 🌊 💎 🌊 💧</div>
+      <div>🦋 🌷 🦋 🌷 🦋</div>
+    </div>
+
+    <p id="magicMessage" style="position:relative;z-index:2">
+      Tap anywhere in this garden to awaken its magic! ✨
+    </p>
+  </div>
+
+  <p class="subtitle">
+    On this planet, every flower blooms for you,
+    every river sings for you, and every star knows your name.
+  </p>
+
+  <h2 class="glow">Your people are cheering for you! 🎉</h2>
+  <p class="subtitle">
+    To the artist who brings imagination to life:
+    your subscribers are proud of you! 💗
+  </p>
+
+  <div id="subscribers" class="subscribers"></div>
+
+  <div style="font-size:30px" id="cheering">
+    👏🏻 🎉 👏🏻 💗 👏🏻 🎉 👏🏻
+  </div>
+
+  <button class="pretty-button" onclick="finishJourney()">
+    One Last Surprise, Cherry! 💖
+  </button>
+</section>
+
+<!-- PAGE 6: FINAL BIRTHDAY WISH -->
+<section id="finalPage" class="page ending">
+  <div class="center-page">
+    <div style="font-size:65px" class="glow">🍒💗🌸</div>
+
+    <h1 class="final-title glow">
+      HAPPY BIRTHDAY<br>ONCE AGAIN,<br>MY CHERRY BABE!
+    </h1>
+
+    <p class="subtitle">
+      May your life be as beautiful as the galaxies,
+      your dreams as endless as the stars, and your heart
+      always surrounded by people who love you.
+    </p>
+
+    <p style="font-size:26px">I LOVE YOU SO MUCH! ❤️</p>
+
+    <div style="font-size:35px">💗 💖 💕 💞 💓</div>
+
+    <h2>Did you like your birthday universe? 🥹</h2>
+
+    <div style="position:relative;width:100%;max-width:350px;height:100px">
+      <button class="pretty-button" onclick="sayYes()"
+        style="position:absolute;left:15px;top:10px">
+        YES! 💗
       </button>
 
-      <div class="hint">
-        Made with love by your Litchi 🍒
-      </div>
-    </section>
-  </main>
-
-  <div class="party hidden" id="party"></div>
-
-  
-<script>
-function startParty() {
-  const party = document.getElementById("party");
-  const invitation = document.getElementById("invitation");
-
-  invitation.classList.add("hidden");
-  party.classList.remove("hidden");
-  party.innerHTML = "";
-
-  const symbols = [
-    "🎉", "🎊", "🎈", "💗", "🌸",
-    "✨", "🍒", "💕", "🎈", "🎉"
-  ];
-
-  for (let i = 0; i < 140; i++) {
-    const piece = document.createElement("div");
-    piece.className = "confetti";
-    piece.textContent =
-      symbols[Math.floor(Math.random() * symbols.length)];
-    piece.style.left = Math.random() * 100 + "%";
-    piece.style.fontSize = (20 + Math.random() * 28) + "px";
-    piece.style.animationDuration = (3 + Math.random() * 4) + "s";
-    piece.style.animationDelay = Math.random() * 1.5 + "s";
-    party.appendChild(piece);
-  }
-
-  const message = document.createElement("div");
-  message.className = "party-message";
-  message.innerHTML =
-    "HAPPY BIRTHDAY<br>MY CHERRY! 🍒🌸<br>" +
-    "<span style='font-size:24px'>YOUR MAGIC STARTS NOW!</span>";
-  party.appendChild(message);
-
-  setTimeout(() => {
-    party.innerHTML = "";
-
-    const cake = document.createElement("div");
-    cake.style.cssText = `
-      position:absolute; inset:0; overflow:auto;
-      display:flex; align-items:center; justify-content:center;
-      padding:20px; text-align:center;
-      background:radial-gradient(circle,#713c75,#24112f 70%,#100c20);
-    `;
-
-    cake.innerHTML = `
-      <div style="max-width:400px;padding:25px 15px">
-        <div style="font-size:42px">🌸 🎂 🌸</div>
-        <h1 style="color:#ffd1ed">A Cake for Cherry!</h1>
-        <div style="font-size:65px">
-  🧑🏻‍🍳 🎂 🧑🏻‍🍳
-</div>
-<div id="candles" style="font-size:28px">
-  🕯️ 🕯️ 🕯️ 🕯️ 🕯️
-</div>
-        <p>Your special cake has arrived, Bhawani! 💗</p>
-        <p>Close your eyes, make a wish, and blow your candles!</p>
-        <button id="blow" style="
-          padding:14px 22px;border:0;border-radius:30px;
-          background:#ffaddb;color:#351333;font-weight:bold">
-          Blow Your Candles! 🕯️
-        </button>
-        <div id="cheer" style="font-size:20px;margin-top:20px"></div>
-      </div>
-    `;
-
-    party.appendChild(cake);
-
-    
-
-document.getElementById("blow").onclick = function() {
-  document.getElementById("candles").innerHTML = "💨 ✨ 💨";
-
-  document.getElementById("cheer").innerHTML =
-    "🎂 Candles out! 💨<br><br>" +
-    "👏🏻 👏🏻 👏🏻<br>" +
-    "HAPPY BIRTHDAY, CHERRY! 🍒🌸<br>" +
-    "Your Litchi is cheering the loudest! 💗<br><br>" +
-    "<button onclick=\"showSpaceJourney()\" style=\"padding:14px 22px;border:0;border-radius:30px;background:#ffaddb;color:#351333;font-weight:bold;\">🚀 Begin Space Journey</button>";
-
-  this.textContent = "Wish Granted! ✨";
-  this.disabled = true;
-};
-  }, 5500);
-  }
-function showSpaceJourney() {
-  const party = document.getElementById("party");
-
-  party.innerHTML = `
-    <div style="
-      position:fixed;
-      inset:0;
-      overflow:auto;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:24px;
-      color:white;
-      background:radial-gradient(circle at top,#623a85,#21102f 70%);
-      font-family:Georgia,serif;
-    ">
-      <h1 style="color:#ffb6e6;font-size:32px;">
-        🌌 Cherry's Magical Galaxy 🌸
-      </h1>
-
-      <p style="font-size:17px;max-width:330px;">
-        Welcome to your universe, Cherry! 💗
-        Choose a planet to discover a little message from your Litchi.
-      </p>
-
-      <div style="font-size:55px;margin:12px;">
-        <button onclick="planetMessage('Mercury')" style="background:none;border:0;font-size:45px;">🌑</button>
-        <button onclick="planetMessage('Venus')" style="background:none;border:0;font-size:45px;">🪐</button>
-        <button onclick="planetMessage('Earth')" style="background:none;border:0;font-size:45px;">🌍</button>
-        <button onclick="planetMessage('Mars')" style="background:none;border:0;font-size:45px;">🔴</button>
-        <button onclick="planetMessage('Jupiter')" style="background:none;border:0;font-size:45px;">🟠</button>
-      </div>
-
-      <div id="planet-note" style="
-        margin:18px auto;
-        padding:18px;
-        max-width:320px;
-        min-height:55px;
-        border:1px solid #ffb6e6;
-        border-radius:18px;
-        background:#ffffff12;
-        font-size:18px;
-      ">
-        ✨ Tap a planet to reveal your message! ✨
-      </div>
-
-      <p style="color:#ffc7e9;">Made with love by your Litchi 🍒</p>
+      <button id="noButton" class="pretty-button"
+        style="position:absolute;right:15px;top:10px"
+        onpointerenter="runAway()"
+        onclick="runAway()">
+        No 🙈
+      </button>
     </div>
-  `;
+
+    <p id="yesMessage" class="glow" style="font-size:23px"></p>
+    <p style="margin-top:25px;color:#f8d8f3">
+      Forever your Litchi 🍒🌸
+    </p>
+  </div>
+</section>
+
+<script>
+/* Create background stars */
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 100; i++) {
+  const star = document.createElement("span");
+  star.className = "star";
+  star.textContent = Math.random() > 0.8 ? "✦" : "·";
+  star.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 100 + "%";
+  star.style.fontSize = (8 + Math.random() * 14) + "px";
+  star.style.setProperty("--duration", (1.5 + Math.random() * 4) + "s");
+  stars.appendChild(star);
 }
+
+function showPage(id) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+}
+
+/* Reusable floating particles */
+let particleTimer = null;
+
+function stopParticles() {
+  if (particleTimer) clearInterval(particleTimer);
+  particleTimer = null;
+}
+
+function makeParticles(containerId, symbol, amount, duration) {
+  stopParticles();
+
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+
+  for (let i = 0; i < amount; i++) {
+    createParticle(container, symbol, duration);
+  }
+
+  particleTimer = setInterval(() => {
+    createParticle(container, symbol, duration);
+  }, 240);
+}
+
+function createParticle(container, symbol, duration) {
+  const particle = document.createElement("span");
+  particle.className = symbol === "❤️" ? "heart" : "petal";
+  particle.textContent = symbol;
+  particle.style.left = Math.random() * 100 + "%";
+  particle.style.fontSize = (14 + Math.random() * 18) + "px";
+  particle.style.setProperty("--drift", (Math.random() * 180 - 90) + "px");
+  particle.style.animationDuration = (duration * (.7 + Math.random())) + "s";
+  container.appendChild(particle);
+
+  setTimeout(() => particle.remove(), duration * 2000);
+}
+
+/* Birthday invitation */
+function startParty() {
+  showPage("cakePage");
+}
+
+/* Blow candles and celebrate */
+function blowCandles() {
+  const flames = document.querySelectorAll(".flame");
+
+  flames.forEach(flame => flame.style.display = "none");
+
+  document.getElementById("cakePrompt").textContent =
+    "WISH GRANTED! ✨ Your birthday magic has begun!";
+
+  const button = document.getElementById("blowButton");
+  button.textContent = "Candles Blown! 💗";
+  button.disabled = true;
+  button.style.opacity = ".65";
+
+  document.getElementById("clap").innerHTML =
+    '<span class="clapping">👏🏻 👏🏻 👏🏻</span>';
+
+  document.getElementById("cakeNext").innerHTML =
+    '<h2 class="glow">HAPPY BIRTHDAY, CHERRY! 🍒</h2>' +
+    '<p>Your three friends are cheering for you! 🎉</p>' +
+    '<button class="pretty-button" onclick="openLetter()">' +
+    'Open Your Birthday Letter 💌</button>';
+
+  makeParticles("hearts", "💗", 35, 5);
+}
+
+function openLetter() {
+  stopParticles();
+  showPage("letterPage");
+  makeParticles("petals", "🌸", 35, 7);
+}
+
+function openSpace() {
+  stopParticles();
+  showPage("spacePage");
+}
+
+/* Planet messages */
+const planetMessages = {
+  Mercury: [
+    "MERCURY 💌",
+    "Even the smallest moments with you become precious memories. Never stop being your wonderful self."
+  ],
+  Venus: [
+    "VENUS 🌸",
+    "The planet of love has one message for you: you deserve love, kindness, and happiness beyond measure."
+  ],
+  Earth: [
+    "EARTH 🌍",
+    "In a world full of people, you are one of the people who makes this world more beautiful."
+  ],
+  Mars: [
+    "MARS ❤️",
+    "Keep being brave, keep creating, and remember that difficult chapters do not define your whole story."
+  ],
+  Jupiter: [
+    "JUPITER ✨",
+    "May your dreams grow bigger than the biggest planet. Your talent deserves room to shine."
+  ],
+  Saturn: [
+    "SATURN 💫",
+    "Like Saturn's beautiful rings, may your life always be surrounded by love, loyal friends, and happy memories."
+  ],
+  Uranus: [
+    "URANUS 🩵",
+    "Stay unique, stay curious, and never let the world dim the wonderful light inside you."
+  ],
+  Neptune: [
+    "NEPTUNE 💙",
+    "May every dream you whisper to the stars find its way toward a beautiful future."
+  ]
+};
 
 function planetMessage(planet) {
-  const messages = {
-    Mercury: "💌 Cherry, you make even little moments special!",
-    Venus: "🌸 You deserve all the love and happiness in this universe.",
-    Earth: "🌍 No matter how big the universe is, you'll always be special to your Litchi.",
-    Mars: "❤️ Keep shining with your brave and beautiful heart!",
-    Jupiter: "✨ May your dreams grow bigger than the biggest planet!"
-  };
+  const message = planetMessages[planet];
 
-  document.getElementById("planet-note").textContent = messages[planet];
+  document.getElementById("planetNote").innerHTML =
+    "<strong>" + message[0] + "</strong><br>" + message[1];
+
+  document.getElementById("zoomTitle").textContent = message[0];
+  document.getElementById("zoomText").textContent = message[1];
+  document.getElementById("planetZoom").style.display = "block";
+
+  document.getElementById("planetZoom").scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
 }
 
+function closePlanet() {
+  document.getElementById("planetZoom").style.display = "none";
+}
+
+/* CHERRY-11 */
+function visitCherry() {
+  showPage("cherryPage");
+  stopParticles();
+
+  const names = [
+    "Kunaji", "Kamal Hinode", "Shivam", "Eisha",
+    "Icecream Hinode", "Isha", "Shriya", "Papibilli",
+    "Himu", "Satvik", "Harsh", "Michii"
+  ];
+
+  const container = document.getElementById("subscribers");
+  container.innerHTML = "";
+
+  names.forEach((name, index) => {
+    const tag = document.createElement("span");
+    tag.className = "subscriber";
+    tag.textContent = "👏🏻 " + name + " 💗";
+    tag.style.animationDelay = (index * .12) + "s";
+    container.appendChild(tag);
+  });
+}
+
+let magicAwake = false;
+
+function awakenMagic() {
+  const garden = document.getElementById("garden");
+  const message = document.getElementById("magicMessage");
+
+  garden.classList.add("magic");
+  magicAwake = true;
+
+  message.innerHTML =
+    "✨ THE MAGIC IS AWAKE! ✨<br>" +
+    "The rivers sparkle, the butterflies dance, " +
+    "and every flower blooms for you, Cherry! 🌸🦋";
+
+  makeParticles("hearts", "💗", 35, 5);
+
+  document.getElementById("cheering").innerHTML =
+    '<span class="clapping">👏🏻 🎉 👏🏻 🎉 👏🏻</span>';
+}
+
+function finishJourney() {
+  stopParticles();
+  showPage("finalPage");
+  makeParticles("hearts", "❤️", 35, 6);
+}
+
+function sayYes() {
+  document.getElementById("yesMessage").textContent =
+    "YAYYYYY! 🥹💗 Your Litchi loves you to the moon and back! 🍒🌙";
+
+  makeParticles("hearts", "💗", 45, 5);
+}
+
+function runAway() {
+  const button = document.getElementById("noButton");
+  const parent = button.parentElement;
+
+  const maxX = Math.max(0, parent.clientWidth - button.offsetWidth);
+  const maxY = Math.max(0, parent.clientHeight - button.offsetHeight);
+
+  button.style.left = Math.random() * maxX + "px";
+  button.style.top = Math.random() * maxY + "px";
+  button.style.right = "auto";
+}
 </script>
 
 </body>
