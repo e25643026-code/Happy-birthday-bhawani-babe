@@ -270,11 +270,14 @@ function startParty() {
 
     party.appendChild(cake);
 
-    document.getElementById("blow").onclick = function() {
-      document.getElementById("cheer").innerHTML =
-        "🎂 Candles out! 💨<br><br>👏🏻 👏🏻 👏🏻<br>" +
-        "HAPPY BIRTHDAY, CHERRY! 🍒🌸<br>" +
-        "Your Litchi is cheering the loudest! 💗";
+    
+document.getElementById("cheer").innerHTML =
+  "🎂 Candles out! 💨<br><br>" +
+  "👏🏻 👏🏻 👏🏻<br>" +
+  "HAPPY BIRTHDAY, CHERRY! 🍒🌸<br>" +
+  "Your Litchi is cheering the loudest! 💗<br><br>" +
+  "<button onclick=\"showSpaceJourney()\" style=\"padding:14px 22px;border:0;border-radius:30px;background:#ffaddb;color:#351333;font-weight:bold;\">🚀 Begin Space Journey</button>";
+
       this.textContent = "Wish Granted! ✨";
       this.disabled = true;
     };
