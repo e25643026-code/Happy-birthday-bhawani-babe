@@ -1,232 +1,330 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>For Bhawani Babe 🌸💗</title>
+<meta name="theme-color" content="#10091f">
+<title>For Bhawani Babe 🍒💗</title>
 
 <style>
 *{box-sizing:border-box}
+:root{--pink:#ff91dc;--purple:#a67aff;--gold:#ffe2a6}
 body{
- margin:0;color:white;text-align:center;
- font-family:Georgia,serif;
- background:radial-gradient(circle at top,#44245f,#17102f 55%,#080616);
+ margin:0;background:#10091f;color:white;
+ font-family:Georgia,serif;text-align:center;
  overflow-x:hidden
 }
+button{font:inherit;cursor:pointer;touch-action:manipulation}
+button:focus-visible{outline:3px solid white;outline-offset:4px}
 .screen{
- display:none;min-height:100vh;padding:28px 15px 45px;
+ display:none;min-height:100vh;min-height:100svh;
+ padding:30px 14px 40px;
  align-items:center;justify-content:center;flex-direction:column;
- position:relative;isolation:isolate
+ position:relative;isolation:isolate;overflow:hidden
 }
 .screen.active{display:flex}
 h1{
- font-size:clamp(2.3rem,8vw,4rem);color:#fff1fa;
- text-shadow:0 0 12px #ff63c8,0 0 35px #b56cff;
- animation:glow 2s infinite alternate
+ font-size:clamp(2.2rem,8vw,4.4rem);
+ color:#fff0fb;
+ text-shadow:0 0 16px #ff5ac8,0 0 35px #9867ff;
+ margin:15px 0
 }
-h2{color:#ffe3a8}
-p{line-height:1.75;max-width:800px}
-@keyframes glow{
- to{text-shadow:0 0 25px #ff72d2,0 0 50px #aa70ff}
+h2{color:#ffe0fa}
+p{line-height:1.8;max-width:760px}
+.small{font-size:.85rem;letter-spacing:2px;color:#ffd2f1}
+.glow{animation:glow 2s ease-in-out infinite alternate}
+@keyframes glow{to{text-shadow:0 0 24px #ff60d0,0 0 55px #9669ff}}
+.btn{
+ border:1px solid #ffc7ed;border-radius:40px;
+ padding:13px 22px;margin:8px;color:white;
+ background:linear-gradient(120deg,#fa55b4,#7956ed);
+ box-shadow:0 0 22px #d66dff44;
+ position:relative;z-index:4
 }
-button{
- font:inherit;cursor:pointer;touch-action:manipulation;
- position:relative;z-index:10;color:white;
- border:1px solid #ffc9eb;border-radius:30px;
- padding:13px 20px;margin:8px;
- background:linear-gradient(120deg,#ff62b8,#9866ff);
- box-shadow:0 0 18px #ff7bd966
-}
-button:active{transform:scale(.96)}
+.btn:active{transform:scale(.96)}
 .card{
- width:min(900px,100%);padding:22px 15px;
- border:1px solid #ffffff40;border-radius:24px;
- background:#ffffff0d;box-shadow:0 0 35px #b46cff20
+ width:min(900px,100%);padding:22px 14px;
+ border:1px solid #ffffff30;border-radius:25px;
+ background:#ffffff09;box-shadow:0 0 35px #b46cff18
 }
-.small{font-size:.8rem;color:#ffd5f1}
+#musicButton{
+ position:fixed;right:12px;top:12px;z-index:200;
+ width:48px;height:48px;border-radius:50%;
+ border:1px solid #ffc7ed;color:white;
+ background:#41204f;box-shadow:0 0 18px #ff70d788;
+ font-size:21px
+}
+#musicStatus{
+ position:fixed;right:15px;top:64px;z-index:200;
+ font-size:10px;color:#ffd6f2;pointer-events:none
+}
 .heart{font-size:4rem;animation:heartbeat 1.5s infinite}
-@keyframes heartbeat{50%{transform:scale(1.13)}}
-
+@keyframes heartbeat{50%{transform:scale(1.1)}}
 .stars{
  position:fixed;inset:0;z-index:-1;pointer-events:none;
- background-image:radial-gradient(white 1px,transparent 2px);
- background-size:48px 48px;opacity:.4;
- animation:twinkle 3s infinite alternate
+ background-image:
+ radial-gradient(white 1px,transparent 1.5px),
+ radial-gradient(#ffb8ed 1px,transparent 1.5px),
+ radial-gradient(#b9b9ff 1px,transparent 1.5px);
+ background-size:47px 47px,83px 83px,119px 119px;
+ background-position:0 0,24px 31px,61px 15px;
+ animation:twinkle 4s infinite alternate
 }
-@keyframes twinkle{to{opacity:.9}}
-
+@keyframes twinkle{to{opacity:.45;filter:brightness(1.7)}}
 .video{
- display:block;width:100%;max-width:700px;
- max-height:60vh;object-fit:contain;
- border-radius:18px;background:#090719;
- border:1px solid #ffffff30;margin:18px auto
+ display:block;width:100%;max-width:720px;
+ max-height:58vh;object-fit:contain;
+ margin:18px auto;border-radius:18px;
+ background:#080513;border:1px solid #ffffff30
 }
-#claps{display:none;font-size:2rem}
-#claps.show{display:block;animation:clap .35s infinite alternate}
-@keyframes clap{to{transform:translateY(-7px) rotate(4deg)}}
-
-/* LETTER */
+.letter{
+ display:none;max-width:800px;margin:22px auto;padding:25px;
+ text-align:left;color:#713c5e;
+ border-radius:20px;background:linear-gradient(145deg,#fffaf8,#ffe0f0);
+ line-height:1.9;box-shadow:0 0 35px #ff83c766
+}
+.letter h2{text-align:center;color:#c34891}
 .envelope{
- width:min(330px,90%);height:180px;
- background:#ffc9e7;border-radius:12px;
- position:relative;overflow:hidden;color:#713458;
- display:grid;place-items:center;
- box-shadow:0 0 35px #ff69c8
+ position:relative;width:min(330px,90%);height:175px;
+ display:grid;place-items:center;overflow:hidden;
+ background:#ffc8e5;border-radius:12px;color:#713458;
+ border:0;box-shadow:0 0 35px #ff69c8
 }
 .env-flap{
  position:absolute;inset:0;background:#ffb3db;
  clip-path:polygon(0 0,100% 0,50% 65%);
- transform-origin:top;transition:transform .8s;z-index:2
+ transform-origin:top;transition:transform .8s
 }
 .envelope.open .env-flap{transform:rotateX(180deg)}
-.env-paper{font-size:1.1rem;padding:20px;color:#77365e}
-.letter{
- display:none;max-width:820px;margin:25px auto;padding:25px;
- text-align:left;color:#633452;border-radius:20px;
- background:linear-gradient(145deg,#fffaf5,#ffe1f0);
- box-shadow:0 0 30px #ff8ccc
+.env-paper{padding:15px;color:#713458}
+.rose,.rising-heart{
+ position:fixed;z-index:150;pointer-events:none;
+ animation:fall linear forwards
 }
-.letter h2{text-align:center;color:#c04491}
-.letter p{line-height:1.9}
-
-/* FALLING ROSES */
-.rose{
- position:fixed;top:-50px;z-index:100;pointer-events:none;
- animation:roseFall linear forwards
-}
-@keyframes roseFall{
- to{transform:translate(var(--drift),110vh) rotate(650deg);opacity:.15}
+.rose{top:-45px}
+.rising-heart{bottom:-40px}
+@keyframes fall{
+ to{transform:translate(var(--drift),110vh) rotate(600deg);opacity:0}
 }
 
-/* PLANET BUTTONS */
-.solar{
- width:100%;max-width:700px;margin:20px auto;
- display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
- gap:14px;align-items:center;justify-items:center
+/* FULL SOLAR SYSTEM */
+.space{
+ background:radial-gradient(ellipse at center,#241449 0%,#10091f 62%,#05040c 100%);
+ padding:22px 5px 25px
+}
+.space h1{font-size:clamp(1.7rem,6vw,3.2rem);margin:12px 0}
+.space .small{margin-top:42px}
+.solar-stage{
+ width:min(94vw,720px);
+ aspect-ratio:1;position:relative;
+ margin:8px auto 4px;flex-shrink:0;
+ transition:transform 1.35s cubic-bezier(.2,.8,.2,1),opacity 1s;
+ transform-origin:50% 2%
+}
+.orbit{
+ position:absolute;left:50%;top:50%;
+ width:calc(var(--r)*1%);aspect-ratio:1;
+ border:1px solid rgba(223,207,255,.35);
+ border-radius:50%;
+ transform:translate(-50%,-50%);
+ animation:orbitSpin var(--speed) linear infinite;
+}
+@keyframes orbitSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.sun{
+ position:absolute;left:50%;top:50%;
+ width:12%;aspect-ratio:1;transform:translate(-50%,-50%);
+ border-radius:50%;
+ background:radial-gradient(circle,#fff 0%,#e8e8e8 27%,#8e8eab 57%,#39344d 75%,transparent 76%);
+ box-shadow:0 0 15px #fff,0 0 35px #d9d5ff,0 0 70px #8d76ff;
+ display:grid;place-items:center;font-size:clamp(19px,5vw,39px);
+ animation:sunPulse 3s ease-in-out infinite alternate
+}
+@keyframes sunPulse{to{box-shadow:0 0 25px #fff,0 0 55px #d9d5ff,0 0 100px #8d76ff}}
+.orbiter{
+ position:absolute;top:0;left:50%;
+ transform:translate(-50%,-50%);
 }
 .planet{
- width:100%;max-width:155px;min-height:115px;
- border-radius:22px;border:1px solid #ffffff50;
+ width:clamp(27px,6.5vw,48px);
+ aspect-ratio:1;border-radius:50%;
+ padding:0;border:1px solid #ffffff90;
  display:flex;align-items:center;justify-content:center;
- flex-direction:column;gap:7px;padding:12px;
- background:linear-gradient(145deg,#ffffff25,#ffffff08);
- box-shadow:0 0 18px #c88bff20;
- transition:transform .25s,box-shadow .25s
+ position:relative;color:white;
+ box-shadow:inset -7px -5px 10px #0008,0 0 12px #ffffff38;
+ transition:filter .2s,box-shadow .2s
 }
-.planet:active{transform:scale(.94)}
-.planet span{font-size:2.8rem}
-.planet small{font-size:.9rem}
-.mercury{background:linear-gradient(145deg,#999,#333)}
-.venus{background:linear-gradient(145deg,#ffcc8b,#a85845)}
-.earth{background:linear-gradient(145deg,#45dfb0,#1752bd)}
-.mars{background:linear-gradient(145deg,#ff9d72,#86232d)}
-.jupiter{background:linear-gradient(145deg,#eec59a,#7c4939)}
-.saturn{background:linear-gradient(145deg,#ffe3a3,#aa824d)}
-.uranus{background:linear-gradient(145deg,#a4ffff,#338baf)}
-.neptune{background:linear-gradient(145deg,#8ebdff,#2638a2)}
-#planetNote{
- min-height:100px;padding:22px;margin:15px auto;
- max-width:650px;width:100%;border:1px solid #ffc5e8;
- border-radius:20px;background:#ffffff12;
- box-shadow:0 0 22px #e17bff25;
- display:flex;align-items:center;justify-content:center;
- font-size:1.15rem;line-height:1.7
+.planet:active{filter:brightness(1.6);box-shadow:0 0 25px white}
+.planet::after{
+ content:attr(data-label);
+ position:absolute;top:calc(100% + 3px);left:50%;
+ transform:translateX(-50%);white-space:nowrap;
+ font:clamp(8px,2.1vw,12px) Arial,sans-serif;
+ color:#fff;text-shadow:0 0 6px #b89aff;
+ pointer-events:none
 }
+.mercury{background:radial-gradient(circle at 30% 25%,#d7d0c8,#77747d 48%,#39323e)}
+.venus{background:radial-gradient(circle at 30% 25%,#fff0ad,#e8a45f 45%,#9e493a)}
+.earth{background:radial-gradient(circle at 30% 25%,#7fffe4,#227ad7 45%,#143c79)}
+.mars{background:radial-gradient(circle at 30% 25%,#ffd09a,#e85e3b 45%,#762c34)}
+.jupiter{background:repeating-linear-gradient(0deg,#9c5e45 0 5px,#eac29b 5px 10px,#d38a61 10px 14px)}
+.saturn{
+ background:radial-gradient(circle at 30% 25%,#fff0b0,#d6b47a 50%,#8d684c)
+}
+.saturn::before{
+ content:"";position:absolute;width:175%;height:45%;
+ border:3px solid #ead3a1;border-radius:50%;
+ transform:rotate(-25deg);z-index:-1
+}
+.uranus{background:radial-gradient(circle at 30% 25%,#d5ffff,#65d8e8 55%,#3188b4)}
+.neptune{background:radial-gradient(circle at 30% 25%,#b9d9ff,#4b77e8 48%,#17285f)}
+.cherry{
+ width:clamp(33px,8vw,58px);
+ background:radial-gradient(circle at 27% 22%,#fff0ff 0%,#ffb4ef 16%,#fa58ce 42%,#a32cf1 70%,#48246f);
+ box-shadow:0 0 14px #ff7be5,0 0 28px #c65bff,0 0 48px #f36bcf77;
+}
+.cherry::before{
+ content:"";position:absolute;width:155%;height:42%;
+ border:2px solid #ffcaf7;border-radius:50%;
+ transform:rotate(-24deg);box-shadow:0 0 10px #ff85e8
+}
+.cherry::after{
+ content:"CHERRY-11";top:calc(100% + 4px);
+ font-size:clamp(7px,1.7vw,10px)
+}
+.orbit-note{
+ width:min(94%,520px);min-height:85px;
+ margin:5px auto 8px;padding:15px 12px;
+ border-radius:18px;border:1px solid #ffffff30;
+ background:#ffffff0b;display:flex;
+ justify-content:center;align-items:center;
+ font-size:clamp(.95rem,3.4vw,1.15rem);line-height:1.6
+}
+.space-hint{font-size:.83rem;color:#e7d5ff;margin:4px 0 10px}
 
-/* CHERRY-11 */
-.cherry-title{
- color:#ffd5fa;
- text-shadow:0 0 15px #ff65df,0 0 35px #a76aff
+/* CHERRY DISCOVERY + ZOOM */
+#cherryPrompt{
+ display:none;position:fixed;inset:0;z-index:70;
+ align-items:center;justify-content:center;padding:20px;
+ background:#080512dd;backdrop-filter:blur(7px)
 }
-.world{
- width:100%;min-height:300px;position:relative;
- overflow:hidden;border-radius:25px;padding:20px 10px;
- background:linear-gradient(#251449,#603879 50%,#17444e);
- border:1px solid #ffbaff70;
- box-shadow:0 0 30px #ef72ff30
-}
-.magic{
- position:absolute;inset:0;pointer-events:none;
- background-image:radial-gradient(#fff 1px,transparent 2px);
- background-size:37px 45px;
- animation:magic 5s linear infinite;opacity:.8
-}
-@keyframes magic{to{background-position:37px -45px}}
-.butterfly{
- position:absolute;font-size:1.8rem;
- animation:fly 6s infinite alternate
-}
-.b1{left:8%;top:18%}
-.b2{right:9%;top:28%;animation-delay:-3s}
-.b3{left:65%;top:10%;animation-delay:-1s}
-@keyframes fly{
- 50%{transform:translate(25px,-20px) rotate(15deg)}
- to{transform:translate(-10px,18px)}
+#cherryPrompt.show{display:flex}
+.prompt-card{
+ width:min(420px,100%);padding:25px 18px;
+ border-radius:25px;border:1px solid #ffb6f3;
+ background:linear-gradient(145deg,#382052,#17102c);
+ box-shadow:0 0 50px #f46be7
 }
 #flash{
  position:fixed;inset:0;background:white;opacity:0;
- pointer-events:none;z-index:90
+ pointer-events:none;z-index:180
 }
-#flash.on{animation:flash .7s}
-@keyframes flash{25%{opacity:.7}to{opacity:0}}
-.heartRain{
- position:fixed;bottom:-40px;pointer-events:none;z-index:80;
- animation:rise 5s linear forwards
+#flash.on{animation:flashIn 1.5s ease-in-out}
+@keyframes flashIn{
+ 0%{opacity:0}
+ 16%{opacity:1}
+ 38%{opacity:.85}
+ 100%{opacity:0}
 }
-@keyframes rise{to{transform:translateY(-110vh);opacity:0}}
-.artist{font-size:4rem;display:inline-block;animation:heartbeat 1.5s infinite}
-.canvas{font-size:3.5rem}
-.names{
- display:flex;flex-wrap:wrap;justify-content:center;gap:8px
+.space.zooming .solar-stage{
+ transform:scale(9);opacity:0
 }
-.names span{
- padding:8px 12px;background:#ffffff15;
- border-radius:20px;border:1px solid #ffffff30
+.space.zooming .space-heading{opacity:0;transition:opacity .35s}
+
+/* CHERRY PLANET WORLD */
+#cherry{
+ background:radial-gradient(ellipse at 50% 25%,#653c86,#241338 57%,#0c0719)
 }
-#answer{min-height:35px}
-@media(min-width:520px){
- .solar{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cherry-title{color:#ffd6fa;text-shadow:0 0 20px #ff62d5,0 0 55px #b15aff}
+.world{
+ position:relative;isolation:isolate;overflow:hidden;
+ width:min(800px,100%);min-height:340px;
+ border:1px solid #ffb7f580;border-radius:25px;
+ background:linear-gradient(#28133f 0%,#694182 48%,#e28bc8 100%);
+ box-shadow:0 0 45px #f16fe755;padding:18px 12px
+}
+.world::before{
+ content:"";position:absolute;z-index:-1;inset:0;
+ background:radial-gradient(circle at 50% 45%,#fff9 0 1px,transparent 2px);
+ background-size:31px 37px;animation:twinkle 2.8s infinite alternate
+}
+.world-planet{
+ width:180px;max-width:55vw;aspect-ratio:1;
+ border-radius:50%;margin:25px auto 20px;position:relative;
+ background:radial-gradient(circle at 30% 25%,#fff3ff,#ffb5f0 20%,#ee64d1 45%,#a34bdb 73%,#4c276f);
+ box-shadow:inset -25px -15px 35px #4b1c7077,0 0 30px #ffb0f7,0 0 75px #d76aff;
+ animation:floatPlanet 5s ease-in-out infinite
+}
+.world-planet::before{
+ content:"";position:absolute;width:145%;height:32%;
+ border:5px solid #ffd7fa;border-radius:50%;
+ top:37%;left:-22%;transform:rotate(-22deg);
+ box-shadow:0 0 16px #ffa6f4
+}
+@keyframes floatPlanet{50%{transform:translateY(-9px) rotate(3deg)}}
+.butterfly{position:absolute;font-size:27px;animation:fly 5s ease-in-out infinite alternate}
+.b1{top:18%;left:9%}.b2{top:30%;right:10%;animation-delay:-2s}
+.b3{top:65%;left:12%;animation-delay:-1s}
+@keyframes fly{to{transform:translate(25px,-20px) rotate(15deg)}}
+.drawing{font-size:4rem}
+
+/* ENDING */
+.names{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.names span{padding:8px 11px;border:1px solid #ffffff30;border-radius:25px;background:#ffffff12}
+#answer{min-height:42px}
+#no{transition:transform .12s}
+@media(max-width:370px){
+ .screen{padding-left:7px;padding-right:7px}
+ .solar-stage{width:97vw}
+ .orbit-note{font-size:.9rem}
 }
 @media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation-duration:0.01ms!important}
+ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 </style>
 </head>
 
 <body>
 <div class="stars"></div>
-<div id="roseRain"></div>
+<div id="rain"></div>
 <div id="flash"></div>
-<div id="heartRain"></div>
+
+<!-- ONE AUDIO PLAYER FOR THE WHOLE WEBSITE -->
+<audio id="birthdayMusic" loop preload="auto">
+ <source src="meri-laila.mp3" type="audio/mpeg">
+</audio>
+<button id="musicButton" onclick="toggleMusic()" aria-label="Play or pause birthday music">🎵</button>
+<div id="musicStatus">MUSIC</div>
 
 <!-- WELCOME -->
 <section class="screen active" id="welcome">
  <div class="heart">🌸💗🌸</div>
- <p class="small">A universe made with love</p>
- <h1>For Bhawani Babe</h1>
+ <p class="small">A UNIVERSE MADE WITH LOVE</p>
+ <h1 class="glow">For Bhawani Babe</h1>
  <p>My favourite artist deserves the most magical birthday surprise. ✨</p>
- <button onclick="start()">Open your birthday surprise ✨</button>
+ <button class="btn" onclick="start()">Open your birthday surprise ✨</button>
+ <p class="small">P.S. Tap the music button if the song doesn't start 🎶</p>
 </section>
 
-<!-- BIRTHDAY CAKE -->
+<!-- BIRTHDAY -->
 <section class="screen" id="cake">
  <div class="card">
-  <p class="small">Make a wish, birthday girl</p>
+  <p class="small">MAKE A WISH, BIRTHDAY GIRL</p>
   <h1>Happy Birthday, Bhawani! 🎂</h1>
   <div style="font-size:7rem">🎂</div>
   <p id="cakeWords">Close your eyes and make a wish.</p>
-  <button onclick="blow()">Blow the candles 🌬️</button>
-  <div id="claps">👏 🎉 👏 💗 👏 🎉 👏</div>
-  <video class="video" controls autoplay muted loop playsinline>
+  <button class="btn" onclick="blow()">Blow the candles 🌬️</button>
+  <div id="claps" style="font-size:2rem;display:none">👏 🎉 👏 💗 👏 🎉 👏</div>
+  <video class="video" controls playsinline preload="metadata">
    <source src="1791707563583.mp4" type="video/mp4">
   </video>
-  <button onclick="go('letterScreen')">Open your letter 💌</button>
+  <button class="btn" onclick="go('letterScreen')">Open your letter 💌</button>
  </div>
 </section>
 
-<!-- YOUR ORIGINAL LETTER -->
+<!-- LETTER -->
 <section class="screen" id="letterScreen">
- <p class="small">A letter written from the heart</p>
+ <p class="small">A LETTER WRITTEN FROM THE HEART</p>
  <h1>For you, Bhawani 💌</h1>
  <button class="envelope" id="envelope" onclick="openLetter()">
   <span class="env-paper">Tap to open your letter 🌹</span>
@@ -243,222 +341,330 @@ button:active{transform:scale(.96)}
   <p><b>Love you so much, babe. 🌸❤️</b></p>
   <p style="text-align:right">Always cheering for you,<br><b>Your Litchi 🍒💗</b></p>
  </article>
-
- <button onclick="go('space')">Travel to our galaxy 🌌</button>
+ <button class="btn" onclick="go('space')">Travel to our galaxy 🌌</button>
 </section>
 
-<!-- SOLAR SYSTEM -->
-<section class="screen" id="space">
- <div class="card">
-  <p class="small">A galaxy made just for you</p>
-  <h1>Bhawani's Solar System 🪐</h1>
-  <p>Watch the planets dance around the Sun, then tap each planet for a message from your Litchi. ✨</p>
-
-  <!-- Upload your first PixVerse video as solar-system.mp4 -->
-  <video class="video" autoplay muted loop playsinline controls>
-   <source src="solar-system.mp4" type="video/mp4">
-   Your solar-system video could not be loaded.
-  </video>
-
-  <h2>Tap a planet, birthday girl 💗</h2>
-  <div class="solar">
-   <button class="planet mercury" onclick="note('Mercury')">
-    <span>☿</span><small>Mercury</small>
-   </button>
-   <button class="planet venus" onclick="note('Venus')">
-    <span>♀</span><small>Venus</small>
-   </button>
-   <button class="planet earth" onclick="note('Earth')">
-    <span>🌍</span><small>Earth</small>
-   </button>
-   <button class="planet mars" onclick="note('Mars')">
-    <span>🔴</span><small>Mars</small>
-   </button>
-   <button class="planet jupiter" onclick="note('Jupiter')">
-    <span>🪐</span><small>Jupiter</small>
-   </button>
-   <button class="planet saturn" onclick="note('Saturn')">
-    <span>💫</span><small>Saturn</small>
-   </button>
-   <button class="planet uranus" onclick="note('Uranus')">
-    <span>🔵</span><small>Uranus</small>
-   </button>
-   <button class="planet neptune" onclick="note('Neptune')">
-    <span>🌌</span><small>Neptune</small>
-   </button>
-  </div>
-
-  <div id="planetNote" aria-live="polite">
-   ✨ Tap a planet to reveal its secret message ✨
-  </div>
-
-  <button onclick="go('cherry')">Discover CHERRY-11 🍒</button>
+<!-- SOLAR SYSTEM: LARGE, CENTRED, AND ALONE -->
+<section class="screen space" id="space">
+ <div class="space-heading">
+  <p class="small">YOUR PERSONAL GALAXY</p>
+  <h1>Our Solar System 🪐</h1>
+  <p class="space-hint">Tap any revolving planet to reveal its message ✨</p>
  </div>
-</section>
 
-<!-- CHERRY-11 DREAM PLANET -->
-<section class="screen" id="cherry">
- <div class="card">
-  <p class="small">Your very own magical universe</p>
-  <h1 class="cherry-title">CHERRY-11 🍒</h1>
-  <p>A little pink planet in a universe of its own... made especially for you. 💗</p>
+ <div class="solar-stage" id="solarStage">
+  <div class="sun" title="The Sun">☀️</div>
 
-  <div class="world" onclick="magicLight()">
-   <div class="magic"></div>
-   <span class="butterfly b1">🦋</span>
-   <span class="butterfly b2">🦋</span>
-   <span class="butterfly b3">✨</span>
-   <div style="font-size:5rem;margin:40px 0 15px">
-    🪐🍒💗
+  <div class="orbit" style="--r:17;--speed:5s">
+   <div class="orbiter">
+    <button class="planet mercury" data-label="Mercury" aria-label="Mercury" onclick="planetTap('Mercury')"></button>
    </div>
-   <h2>Welcome home, Bhawani</h2>
-   <p>A dreamy little world where the stars sparkle for you.</p>
-   <p>Tap anywhere in this world for a little magic ✨</p>
   </div>
-
-  <!-- Upload your second PixVerse video as cherry-11.mp4 -->
-  <h2>Your magical planet in motion 💫</h2>
-  <video class="video" controls autoplay muted loop playsinline>
-   <source src="cherry-11.mp4" type="video/mp4">
-   Your CHERRY-11 video could not be loaded.
-  </video>
-
-  <h2>Your drawing universe 🎨</h2>
-  <div><span class="artist">👩‍🎨</span>
-       <span class="canvas">🖼️</span></div>
-  <p>Keep creating, keep dreaming, and keep sharing your beautiful art with the world.</p>
-
-  <h2>Your cheering squad 📣</h2>
-  <div class="names">
-   <span>Kunaji 👏</span><span>Kamal 👏</span>
-   <span>Hinode 👏</span><span>Shivam 👏</span>
-   <span>Eisha 👏</span><span>Icecream 👏</span>
-   <span>Isha 👏</span><span>Shriya 👏</span>
-   <span>Papibilli 👏</span><span>Himu 👏</span>
-   <span>Satvik 👏</span><span>Harsh 👏</span>
-   <span>Michii 👏</span>
+  <div class="orbit" style="--r:26;--speed:8s">
+   <div class="orbiter">
+    <button class="planet venus" data-label="Venus" aria-label="Venus" onclick="planetTap('Venus')"></button>
+   </div>
   </div>
-  <p>Your Litchi is cheering the loudest! 👏💗</p>
-
-  <button onclick="go('final')">One last surprise 💞</button>
+  <div class="orbit" style="--r:35;--speed:11s">
+   <div class="orbiter">
+    <button class="planet earth" data-label="Earth" aria-label="Earth" onclick="planetTap('Earth')"></button>
+   </div>
+  </div>
+  <div class="orbit" style="--r:44;--speed:15s">
+   <div class="orbiter">
+    <button class="planet mars" data-label="Mars" aria-label="Mars" onclick="planetTap('Mars')"></button>
+   </div>
+  </div>
+  <div class="orbit" style="--r:53;--speed:20s">
+   <div class="orbiter">
+    <button class="planet jupiter" data-label="Jupiter" aria-label="Jupiter" onclick="planetTap('Jupiter')"></button>
+   </div>
+  </div>
+  <div class="orbit" style="--r:62;--speed:25s">
+   <div class="orbiter">
+    <button class="planet saturn" data-label="Saturn" aria-label="Saturn" onclick="planetTap('Saturn')"></button>
+   </div>
+  </div>
+  <div class="orbit" style="--r:71;--speed:30s">
+   <div class="orbiter">
+    <button class="planet uranus" data-label="Uranus" aria-label="Uranus" onclick="planetTap('Uranus')"></button>
+   </div>
+  </div>
+  <div class="orbit" style="--r:80;--speed:36s">
+   <div class="orbiter">
+    <button class="planet neptune" data-label="Neptune" aria-label="Neptune" onclick="planetTap('Neptune')"></button>
+   </div>
+  </div>
+  <div class="orbit" style="--r:94;--speed:44s">
+   <div class="orbiter">
+    <button class="planet cherry" aria-label="CHERRY-11" onclick="showCherryPrompt()"></button>
+   </div>
+  </div>
  </div>
+
+ <div class="orbit-note" id="planetNote" aria-live="polite">
+  🌟 Every planet has a little message for you. Tap one!
+ </div>
+ <p class="space-hint">The pink planet on the outer orbit is CHERRY-11 🍒</p>
+
+ <button class="btn" onclick="go('letterScreen')">Back to your letter 💌</button>
 </section>
 
-<!-- ORIGINAL FINAL SURPRISE -->
+<!-- CHERRY DISCOVERY POPUP -->
+<div id="cherryPrompt" role="dialog" aria-modal="true" aria-labelledby="cherryPromptTitle">
+ <div class="prompt-card">
+  <div style="font-size:4rem">🍒🪐💗</div>
+  <h2 id="cherryPromptTitle">You found CHERRY-11!</h2>
+  <p>Not just another planet. This one was made especially for you, Bhawani. ✨</p>
+  <button class="btn" onclick="exploreCherry()">EXPLORE PLANET 🍒</button>
+  <br>
+  <button class="btn" onclick="closeCherryPrompt()" style="background:#49365b">Keep exploring 🌌</button>
+ </div>
+</div>
+
+<!-- CHERRY-11 WORLD -->
+<section class="screen" id="cherry">
+ <p class="small">A WORLD THAT BELONGS IN YOUR DREAMS</p>
+ <h1 class="cherry-title">Welcome to CHERRY-11 🍒</h1>
+ <p>You've travelled across the universe and found your own little world. 💗</p>
+
+ <div class="world">
+  <span class="butterfly b1">🦋</span>
+  <span class="butterfly b2">🦋</span>
+  <span class="butterfly b3">✨</span>
+  <div class="world-planet"></div>
+  <h2>Your own pink planet</h2>
+  <p>A dreamy place filled with stardust, soft pink skies, butterflies, and a little bit of magic.</p>
+  <button class="btn" onclick="worldMagic()">Make a wish ✨</button>
+ </div>
+
+ <h2>Your magical planet in motion 💫</h2>
+ <p>Look at your beautiful little world come alive.</p>
+ <video class="video" controls autoplay muted loop playsinline preload="metadata">
+  <source src="cherry-11.mp4" type="video/mp4">
+  Your CHERRY-11 video could not be loaded.
+ </video>
+
+ <h2>Your drawing universe 🎨</h2>
+ <div class="drawing">👩‍🎨 🖼️ ✨</div>
+ <p>Keep creating, keep dreaming, and keep sharing your beautiful art with the world.</p>
+
+ <h2>Your cheering squad 📣</h2>
+ <div class="names">
+  <span>Kunaji 👏</span><span>Kamal 👏</span>
+  <span>Hinode 👏</span><span>Shivam 👏</span>
+  <span>Eisha 👏</span><span>Icecream 👏</span>
+  <span>Isha 👏</span><span>Shriya 👏</span>
+  <span>Papibilli 👏</span><span>Himu 👏</span>
+  <span>Satvik 👏</span><span>Harsh 👏</span>
+  <span>Michii 👏</span>
+ </div>
+ <p>Your Litchi is cheering the loudest! 👏💗</p>
+ <button class="btn" onclick="go('final')">One last surprise 💞</button>
+</section>
+
+<!-- FINAL PAGE -->
 <section class="screen" id="final">
  <div class="card">
   <div class="heart">💗💗💗</div>
   <h1>Happy Birthday, Babe!</h1>
   <p>May your days be full of laughter, beautiful art, genuine friends, and a thousand reminders of how loved you are.</p>
   <h2>Did you like your birthday universe? 🥹</h2>
-  <button onclick="yes()">YESSS 💗</button>
-  <button id="no" onclick="nope()">NO 🙈</button>
+  <button class="btn" onclick="yes()">YESSS 💗</button>
+  <button class="btn" id="no" onclick="nope()">NO 🙈</button>
   <p id="answer" aria-live="polite"></p>
-  <button onclick="go('welcome')">Replay the surprise 🌸</button>
+  <button class="btn" onclick="replay()">Replay the surprise 🌸</button>
  </div>
 </section>
 
 <script>
-const notes={
- Mercury:"You are as hot as me ☀️💗",
- Venus:"You are as short-tempered as me (maaf kardijiyeee malkin 😭🙏)",
- Earth:"You mean the world to Litchi 🌍❤️",
- Mars:"You turn as red as me when Litchi flirts with you 🍒😳",
- Jupiter:"Your heart is as big as me 🪐💗",
- Saturn:"You are more beautiful than my rings 💍✨",
- Uranus:"You are bromine without bro 😭🧪",
- Neptune:"You are as cool as me 💙❄️"
+const music=document.getElementById("birthdayMusic");
+const musicButton=document.getElementById("musicButton");
+const musicStatus=document.getElementById("musicStatus");
+let musicStarted=false;
+
+const messages={
+ Mercury:"☀️ You are as hot as me.",
+ Venus:"😭 You are as short-tempered as me (maaf kardijiyeee malkin).",
+ Earth:"🌍 You mean the world to Litchi.",
+ Mars:"😳 You turn as red as me when Litchi flirts with you.",
+ Jupiter:"💗 Your heart is as big as me.",
+ Saturn:"💍 You are more beautiful than my rings.",
+ Uranus:"🧪 You are bromine without bro.",
+ Neptune:"❄️ You are as cool as me."
 };
 
+function updateMusicButton(){
+ if(music.paused){
+  musicButton.textContent="🎵";
+  musicStatus.textContent="MUSIC OFF";
+ }else{
+  musicButton.textContent="🔊";
+  musicStatus.textContent="NOW PLAYING";
+ }
+}
+
+function startMusic(){
+ if(musicStarted && !music.paused)return;
+ music.play().then(()=>{
+  musicStarted=true;
+  updateMusicButton();
+ }).catch(()=>{
+  musicStatus.textContent="TAP 🎵 FOR MUSIC";
+  musicButton.textContent="🎵";
+ });
+}
+
+function toggleMusic(){
+ if(music.paused){
+  music.play().then(()=>{
+   musicStarted=true;
+   updateMusicButton();
+  }).catch(()=>{
+   musicStatus.textContent="TRY AGAIN 🎵";
+  });
+ }else{
+  music.pause();
+  updateMusicButton();
+ }
+}
+
 function go(id){
- document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+ document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+ document.getElementById("cherryPrompt").classList.remove("show");
  const target=document.getElementById(id);
- if(target)target.classList.add('active');
- window.scrollTo({top:0,behavior:'smooth'});
+ if(target)target.classList.add("active");
+ window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function start(){
- go('cake');
- roses(15);
+ startMusic();
+ go("cake");
+ roses(18);
 }
 
 function blow(){
- document.getElementById('cakeWords').textContent=
+ document.getElementById("cakeWords").textContent=
  "Wish made! May all your dreams come true! 💗";
- document.getElementById('claps').classList.add('show');
- flash();roses(25);hearts(12);
+ document.getElementById("claps").style.display="block";
+ roses(30);
+ hearts(15);
 }
 
 function openLetter(){
- document.getElementById('envelope').classList.add('open');
- document.getElementById('letter').style.display='block';
- roses(100);hearts(30);flash();
+ document.getElementById("envelope").classList.add("open");
+ document.getElementById("letter").style.display="block";
+ roses(45);
+ hearts(18);
  setTimeout(()=>{
-  document.getElementById('letter').scrollIntoView({
-   behavior:'smooth',block:'start'
+  document.getElementById("letter").scrollIntoView({
+   behavior:"smooth",block:"start"
   });
  },150);
 }
 
-function note(planet){
- document.getElementById('planetNote').textContent=
- planet+" says: "+notes[planet];
- flash();
- hearts(5);
+function planetTap(name){
+ const note=document.getElementById("planetNote");
+ note.textContent=name+" says: "+messages[name];
+ note.animate(
+  [{opacity:.3,transform:"scale(.96)"},{opacity:1,transform:"scale(1)"}],
+  {duration:350}
+ );
+ hearts(3);
 }
 
-function magicLight(){
- flash();roses(12);hearts(8);
+function showCherryPrompt(){
+ document.getElementById("cherryPrompt").classList.add("show");
 }
 
-function flash(){
- const f=document.getElementById('flash');
- f.classList.remove('on');
- void f.offsetWidth;
- f.classList.add('on');
+function closeCherryPrompt(){
+ document.getElementById("cherryPrompt").classList.remove("show");
+}
+
+function exploreCherry(){
+ closeCherryPrompt();
+ const space=document.getElementById("space");
+ const flash=document.getElementById("flash");
+ space.classList.add("zooming");
+ flash.classList.remove("on");
+ void flash.offsetWidth;
+ flash.classList.add("on");
+
+ setTimeout(()=>{
+  space.classList.remove("zooming");
+  go("cherry");
+  window.scrollTo(0,0);
+ },1250);
+}
+
+function worldMagic(){
+ roses(30);
+ hearts(18);
+ const world=document.querySelector(".world");
+ world.animate(
+  [{filter:"brightness(1)"},{filter:"brightness(1.7)"},{filter:"brightness(1)"}],
+  {duration:1100}
+ );
 }
 
 function roses(n){
- const holder=document.getElementById('roseRain');
+ const holder=document.getElementById("rain");
  for(let i=0;i<n;i++){
-  const r=document.createElement('span');
-  r.className='rose';
-  r.textContent=['🌹','🌸','🌷','💮'][Math.floor(Math.random()*4)];
-  r.style.left=Math.random()*100+'vw';
-  r.style.setProperty('--drift',(Math.random()*180-90)+'px');
-  r.style.animationDuration=(3+Math.random()*4)+'s';
-  r.style.fontSize=(20+Math.random()*22)+'px';
-  holder.appendChild(r);
-  setTimeout(()=>r.remove(),8000);
+  const el=document.createElement("span");
+  el.className="rose";
+  el.textContent=["🌹","🌸","🌷","💮"][Math.floor(Math.random()*4)];
+  el.style.left=Math.random()*100+"vw";
+  el.style.setProperty("--drift",(Math.random()*180-90)+"px");
+  el.style.animationDuration=(3+Math.random()*4)+"s";
+  el.style.fontSize=(18+Math.random()*20)+"px";
+  holder.appendChild(el);
+  setTimeout(()=>el.remove(),8000);
  }
 }
 
 function hearts(n){
- const holder=document.getElementById('heartRain');
+ const holder=document.getElementById("rain");
  for(let i=0;i<n;i++){
-  const h=document.createElement('span');
-  h.className='heartRain';
-  h.textContent=['💗','💖','💕','❤️','✨'][Math.floor(Math.random()*5)];
-  h.style.left=Math.random()*100+'vw';
-  h.style.animationDuration=(3+Math.random()*3)+'s';
-  h.style.fontSize=(20+Math.random()*20)+'px';
-  holder.appendChild(h);
-  setTimeout(()=>h.remove(),7000);
+  const el=document.createElement("span");
+  el.className="rising-heart";
+  el.textContent=["💗","💖","💕","❤️","✨"][Math.floor(Math.random()*5)];
+  el.style.left=Math.random()*100+"vw";
+  el.style.setProperty("--drift",(Math.random()*120-60)+"px");
+  el.style.animationDuration=(3+Math.random()*3)+"s";
+  el.style.fontSize=(20+Math.random()*20)+"px";
+  holder.appendChild(el);
+  setTimeout(()=>el.remove(),7000);
  }
 }
 
 function yes(){
- document.getElementById('answer').textContent=
+ document.getElementById("answer").textContent=
  "I KNEW ITTT! 😭💗 Happy birthday, my favourite artist!";
- hearts(35);roses(25);
+ hearts(35);
+ roses(25);
 }
 
 function nope(){
- document.getElementById('answer').textContent=
+ document.getElementById("answer").textContent=
  "No is not accepted today hehe 😭💗 Try YESSS!";
- const b=document.getElementById('no');
- b.style.transform='translate('+(Math.random()*80-40)+'px,'+
- (Math.random()*40-20)+'px)';
+ const b=document.getElementById("no");
+ b.style.transform="translate("+(Math.random()*100-50)+"px,"+
+ (Math.random()*50-25)+"px)";
+}
+
+function replay(){
+ document.getElementById("no").style.transform="";
+ document.getElementById("answer").textContent="";
+ document.getElementById("letter").style.display="none";
+ document.getElementById("envelope").classList.remove("open");
+ document.getElementById("claps").style.display="none";
+ document.getElementById("cakeWords").textContent=
+ "Close your eyes and make a wish.";
+ document.getElementById("planetNote").textContent=
+ "🌟 Every planet has a little message for you. Tap one!";
+ document.getElementById("space").classList.remove("zooming");
+ go("welcome");
+ startMusic();
 }
 </script>
 </body>
