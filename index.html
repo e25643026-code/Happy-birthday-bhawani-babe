@@ -250,6 +250,23 @@ p{line-height:1.75;max-width:780px}
   <p>Here, every little thing blooms because an artist dreamed it into being.</p>
   <div class="landscape"><div class="mountain"></div><div class="mountain m2"></div><div class="waterfall"></div><div class="river"></div><div class="butterflies"><span class="butterfly" style="left:10%;top:20%">🦋</span><span class="butterfly" style="left:75%;top:25%;animation-delay:-1s">🦋</span><span class="butterfly" style="left:60%;top:60%;animation-delay:-2s">🦋</span><span class="butterfly" style="left:32%;top:35%;animation-delay:-.5s">✨</span><span class="butterfly" style="left:88%;top:60%;animation-delay:-1.5s">🦋</span></div></div>
   <h2>Your art makes its own magic 🎨</h2>
+  
+<div class="bhawani-art">
+  <p>✨ THE ARTIST OF CHERRY-11 ✨</p>
+  <div class="artist-character">👩‍🎨</div>
+  <h2>BHAWANI'S MAGIC ART 🎨</h2>
+  <p>Every little stroke creates a little universe...</p>
+  <svg viewBox="0 0 300 150" width="100%">
+    <path class="drawing-line"
+      d="M150 125 Q145 95 150 72
+      M150 73 C125 65 125 42 145 43
+      C145 18 175 18 175 43
+      C198 43 198 67 174 74
+      C176 96 150 96 150 73"/>
+  </svg>
+  <p>🌸 Keep creating, Bhawani! 🌸</p>
+  <div class="cheer-line">👏👏👏 WE ARE SO PROUD OF YOU! 👏👏👏</div>
+</div>
   <div class="artist-scene"><div class="artist">👩🏻‍🎨</div><div class="canvas-art" aria-label="A colorful painting"></div><div class="artist">🖌️</div></div>
   <p>Every drawing you make holds a little piece of your imagination. Keep creating, keep growing, and keep being wonderfully you. Tap anywhere on this planet for a little burst of magic ✨</p>
   <h2>Your little cheering squad 📣</h2>
@@ -325,6 +342,127 @@ function lightUp(){const f=document.getElementById('lightFlash');f.classList.rem
 function rainHearts(n){const layer=document.getElementById('heartRain');layer.innerHTML='';const hearts=['💗','💖','💕','❤️','💘'];for(let i=0;i<n;i++){const el=document.createElement('span');el.className='heart';el.textContent=hearts[i%hearts.length];el.style.left=Math.random()*100+'%';el.style.animationDuration=(4+Math.random()*5)+'s';el.style.animationDelay=(Math.random()*3)+'s';el.style.setProperty('--drift',((Math.random()-.5)*160)+'px');layer.appendChild(el);setTimeout(()=>el.remove(),10000)}}
 function yesAnswer(){document.getElementById('answer').textContent='YAYYYYY 😭💗🌸 Sending you the biggest birthday hug from your Litchi!';rainHearts(55);confetti()}
 function runAway(){const b=document.getElementById('noBtn');const dx=(Math.random()-.5)*Math.min(220,window.innerWidth*.55);const dy=(Math.random()-.5)*100;b.style.transform=`translate(${dx}px,${dy}px)`;document.getElementById('answer').textContent='Hehe, that button is too shy! Try YESSS 💗'}
+ 
+/* ✨ CHERRY-11 magical universe */
+.cherry-world {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.magic-particle {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  color: #fff4b0;
+  text-shadow: 0 0 12px #ffe58a, 0 0 24px #ff8ce8;
+  animation: magicRise 4s ease-in-out infinite;
+}
+
+@keyframes magicRise {
+  0% { transform: translateY(25px) scale(.4) rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-90px) scale(1.3) rotate(180deg); opacity: 0; }
+}
+
+/* 💦 Flowing waterfall */
+.waterfall {
+  overflow: hidden;
+  filter: drop-shadow(0 0 12px #75efff);
+}
+
+.waterfall::after {
+  content: "";
+  position: absolute;
+  inset: -100% 0;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 12px,
+    rgba(255,255,255,.75) 13px 16px,
+    rgba(100,230,255,.35) 17px 23px
+  );
+  animation: waterFlow 1.2s linear infinite;
+}
+
+@keyframes waterFlow {
+  to { transform: translateY(50%); }
+}
+
+/* 🌿 Plants moving in the breeze */
+.mountain, .mountain.m2 {
+  transform-origin: bottom center;
+  animation: plantSway 3s ease-in-out infinite alternate;
+}
+
+@keyframes plantSway {
+  from { rotate: -2deg; }
+  to { rotate: 2deg; }
+}
+
+/* 🦋 Butterflies fluttering */
+.butterflies {
+  animation: butterflyFlight 7s ease-in-out infinite alternate;
+}
+
+@keyframes butterflyFlight {
+  0% { transform: translate(-20px, 10px) rotate(-8deg); }
+  50% { transform: translate(35px, -25px) rotate(12deg); }
+  100% { transform: translate(-5px, 5px) rotate(-5deg); }
+}
+
+/* 🎨 Bhawani's animated art corner */
+.bhawani-art {
+  position: relative;
+  z-index: 4;
+  margin: 18px auto;
+  padding: 18px;
+  max-width: 420px;
+  text-align: center;
+  border: 1px solid #ffc8f2;
+  border-radius: 22px;
+  background: rgba(30, 15, 60, .78);
+  box-shadow: 0 0 25px #e879ff66;
+}
+
+.artist-character {
+  display: inline-block;
+  font-size: 58px;
+  animation: artistBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes artistBounce {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-8px) rotate(4deg); }
+}
+
+.drawing-line {
+  fill: none;
+  stroke: #ffb9f2;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawMagic 5s ease forwards infinite;
+}
+
+@keyframes drawMagic {
+  0%, 10% { stroke-dashoffset: 500; }
+  65%, 100% { stroke-dashoffset: 0; }
+}
+
+/* 👏 Friends cheering for the artist */
+.cheer-line {
+  animation: cheerBounce .7s ease-in-out infinite alternate;
+}
+
+.cheer-line:nth-child(even) {
+  animation-delay: .35s;
+}
+
+@keyframes cheerBounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-7px); }
+}
 </script>
 </body>
 </html>
