@@ -271,17 +271,32 @@ function startParty() {
     party.appendChild(cake);
 
     
-document.getElementById("cheer").innerHTML =
-  "🎂 Candles out! 💨<br><br>" +
-  "👏🏻 👏🏻 👏🏻<br>" +
-  "HAPPY BIRTHDAY, CHERRY! 🍒🌸<br>" +
-  "Your Litchi is cheering the loudest! 💗<br><br>" +
-  "<button onclick=\"showSpaceJourney()\" style=\"padding:14px 22px;border:0;border-radius:30px;background:#ffaddb;color:#351333;font-weight:bold;\">🚀 Begin Space Journey</button>";
 
-      this.textContent = "Wish Granted! ✨";
-      this.disabled = true;
-    };
-  }, 5500);
+document.getElementById("blow").onclick = function() {
+  document.getElementById("candles").innerHTML = "💨 ✨ 💨";
+
+  document.getElementById("cheer").innerHTML =
+    "🎂 Candles out! 💨<br><br>" +
+    "👏🏻 👏🏻 👏🏻<br>" +
+    "HAPPY BIRTHDAY, CHERRY! 🍒🌸<br>" +
+    "Your Litchi is cheering the loudest! 💗<br><br>" +
+    "<button onclick=\"showSpaceJourney()\" style=\"padding:14px 22px;border:0;border-radius:30px;background:#ffaddb;color:#351333;font-weight:bold;\">🚀 Begin Space Journey</button>";
+
+  this.textContent = "Wish Granted! ✨";
+  this.disabled = true;
+};
+```
+
+**Important:** Do not delete the `}, 5500);` line! That line closes the timer for your cake scene, so it must remain in place. The replacement above ends the button handler only.
+
+### Step 2 — Save and test
+
+1. Tap **Commit changes…** and confirm.
+2. Refresh your live website.
+3. Reach the cake and tap **Blow Your Candles!**
+4. Tap **🚀 Begin Space Journey**.
+
+If GitHub shows an error or the button still doesn't work, send me a screenshot before making any more changes. We'll get Cherry's galaxy working! 🪐💗
 }
   
 function showSpaceJourney() {
