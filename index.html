@@ -283,6 +283,72 @@ document.getElementById("cheer").innerHTML =
     };
   }, 5500);
 }
+  
+function showSpaceJourney() {
+  const party = document.getElementById("party");
+
+  party.innerHTML = `
+    <div style="
+      position:fixed;
+      inset:0;
+      overflow:auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:24px;
+      color:white;
+      background:radial-gradient(circle at top,#623a85,#21102f 70%);
+      font-family:Georgia,serif;
+    ">
+      <h1 style="color:#ffb6e6;font-size:32px;">
+        🌌 Cherry's Magical Galaxy 🌸
+      </h1>
+
+      <p style="font-size:17px;max-width:330px;">
+        Welcome to your universe, Cherry! 💗
+        Choose a planet to discover a little message from your Litchi.
+      </p>
+
+      <div style="font-size:55px;margin:12px;">
+        <button onclick="planetMessage('Mercury')" style="background:none;border:0;font-size:45px;">🌑</button>
+        <button onclick="planetMessage('Venus')" style="background:none;border:0;font-size:45px;">🪐</button>
+        <button onclick="planetMessage('Earth')" style="background:none;border:0;font-size:45px;">🌍</button>
+        <button onclick="planetMessage('Mars')" style="background:none;border:0;font-size:45px;">🔴</button>
+        <button onclick="planetMessage('Jupiter')" style="background:none;border:0;font-size:45px;">🟠</button>
+      </div>
+
+      <div id="planet-note" style="
+        margin:18px auto;
+        padding:18px;
+        max-width:320px;
+        min-height:55px;
+        border:1px solid #ffb6e6;
+        border-radius:18px;
+        background:#ffffff12;
+        font-size:18px;
+      ">
+        ✨ Tap a planet to reveal your message! ✨
+      </div>
+
+      <p style="color:#ffc7e9;">Made with love by your Litchi 🍒</p>
+    </div>
+  `;
+}
+
+function planetMessage(planet) {
+  const messages = {
+    Mercury: "💌 Cherry, you make even little moments special!",
+    Venus: "🌸 You deserve all the love and happiness in this universe.",
+    Earth: "🌍 No matter how big the universe is, you'll always be special to your Litchi.",
+    Mars: "❤️ Keep shining with your brave and beautiful heart!",
+    Jupiter: "✨ May your dreams grow bigger than the biggest planet!"
+  };
+
+  document.getElementById("planet-note").textContent = messages[planet];
+}
+
 </script>
 
 </body>
